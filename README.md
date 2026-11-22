@@ -111,6 +111,15 @@ python scripts/graphiques_rapport.py            # reports/figures/*.png
 Les tests s'appuient sur le modèle versionné `model/credit_risk_v1.0.0.joblib` ; aucun
 ré-entraînement complet n'est nécessaire à chaque modification.
 
+Runs de référence (https://github.com/ibrahima-2/CreditRisk-Test/actions) :
+
+| Run | Déclenchement | Ruff | Pytest 3.12 | Pytest 3.13 | Résultat |
+|---|---|---|---|---|---|
+| n° 1 | push sur `main` | réussi | réussi | réussi | 333 réussis, 1 ignoré, couverture 99,86 % |
+| n° 2 | manuel, `forcer_echec` coché | réussi | échec | échec | `test_echec_volontaire` en échec, code de sortie 1 |
+
+Extraits des journaux : `reports/preuves/ci_github_journaux.txt`.
+
 ## Organisation du dépôt
 
 ```

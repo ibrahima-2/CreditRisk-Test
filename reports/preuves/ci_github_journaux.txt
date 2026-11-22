@@ -1,0 +1,33 @@
+# Extraits des journaux GitHub Actions (récupérés via l'API le 22/11/2026)
+
+## Run 1 (push sur main) - Pytest (Python 3.13)
+https://github.com/ibrahima-2/CreditRisk-Test/actions/runs/45062004790/job/137329791844
+collected 334 items
+TOTAL                    621      1     70      0    99%
+Required test coverage of 90% reached. Total coverage: 99.86%
+======================== 333 passed, 1 skipped in 8.07s ========================
+
+## Run 1 (push sur main) - Pytest (Python 3.12)
+https://github.com/ibrahima-2/CreditRisk-Test/actions/runs/45062004790/job/137329792180
+collected 334 items
+TOTAL                    621      1     70      0    99%
+Required test coverage of 90% reached. Total coverage: 99.86%
+======================== 333 passed, 1 skipped in 9.45s ========================
+
+## Run 2 (manuel, forcer_echec) - Pytest (Python 3.13)
+https://github.com/ibrahima-2/CreditRisk-Test/actions/runs/45062118382/job/137330145706
+collected 334 items
+TOTAL                    621      1     70      0    99%
+Required test coverage of 90% reached. Total coverage: 99.86%
+FAILED tests/test_echec_volontaire.py::test_echec_volontaire - Failed: Échec volontaire : le workflow doit apparaître en rouge
+======================== 1 failed, 333 passed in 8.33s =========================
+##[error]Process completed with exit code 1.
+
+## Run 2 (manuel, forcer_echec) - Pytest (Python 3.12)
+https://github.com/ibrahima-2/CreditRisk-Test/actions/runs/45062118382/job/137330145890
+collected 334 items
+TOTAL                    621      1     70      0    99%
+Required test coverage of 90% reached. Total coverage: 99.86%
+FAILED tests/test_echec_volontaire.py::test_echec_volontaire - Failed: Échec volontaire : le workflow doit apparaître en rouge
+======================== 1 failed, 333 passed in 12.68s ========================
+##[error]Process completed with exit code 1.
