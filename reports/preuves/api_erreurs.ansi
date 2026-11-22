@@ -1,0 +1,13 @@
+[1;32m(.venv) CreditRisk-Test %[0m curl -s -i -X POST 127.0.0.1:8010/predict -H 'Content-Type: application/json' -d '{"age": -5, "revenu_mensuel": "250000", "montant_credit": 0, "duree_mois": 12.5, "nom": "Diallo"}' | grep -E '^HTTP|^\{'
+HTTP/1.1 422 Unprocessable Content
+{"code":"DONNEES_INVALIDES","message":"Les données de la demande ne respectent pas le contrat d'entrée.","details":[{"champ":"age","type":"greater_than_equal","message":"Doit être supérieur ou égal à 18."},{"champ":"revenu_mensuel","type":"float_type","message":"Doit être un nombre."},{"champ":"montant_credit","type":"greater_than","message":"Doit être strictement supérieur à 0.0."},{"champ":"duree_mois","type":"int_type","message":"Doit être un nombre entier."},{"champ":"anciennete_activite","type":"missing","message":"Champ obligatoire manquant."},{"champ":"nom","type":"extra_forbidden","message":"Champ non autorisé."}],"identifiant_requete":"920796f1d3bb4eabb5938a262002bd7b"}
+
+[1;32m(.venv) CreditRisk-Test %[0m curl -s -i -X POST 127.0.0.1:8010/predict -H 'Content-Type: application/json' -d '{"age": 35,' | grep -E '^HTTP|^\{'
+HTTP/1.1 400 Bad Request
+{"code":"REQUETE_MAL_FORMEE","message":"Le corps de la requête n'est pas un JSON valide.","details":[],"identifiant_requete":"24280dc3479443b2a80fb54c9922997f"}
+
+[1;32m(.venv) CreditRisk-Test %[0m curl -s -i -X GET 127.0.0.1:8010/predict | grep -E '^HTTP|^allow|^\{'
+HTTP/1.1 405 Method Not Allowed
+allow: POST
+{"code":"METHODE_NON_AUTORISEE","message":"Méthode HTTP non autorisée pour cette ressource.","details":[],"identifiant_requete":"b07b74c166af4b50afea00e06aeca27a"}
+

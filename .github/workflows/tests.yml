@@ -1,0 +1,85 @@
+name: Tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+    inputs:
+      forcer_echec:
+        description: "Activer le test volontairement défaillant (démonstration du blocage)"
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  qualite:
+    name: Qualité du code (Ruff)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.13"
+      - name: Installer Ruff (version épinglée)
+        run: pip install "$(grep '^ruff==' requirements.txt)"
+      - name: Lint
+        run: ruff check --output-format=github .
+      - name: Format
+        run: ruff format --check .
+
+  tests:
+    name: Pytest (Python ${{ matrix.python-version }})
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.12", "3.13"]
+    env:
+      HYPOTHESIS_PROFILE: ci
+      FORCER_ECHEC: ${{ inputs.forcer_echec && '1' || '0' }}
+      TRACABILITE_SORTIE: reports/ci/tracabilite
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: pip
+          cache-dependency-path: requirements.txt
+      - name: Installer les dépendances
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+      - name: Exécuter les tests avec couverture
+        run: >
+          pytest
+          --cov=app --cov=ml --cov-branch
+          --cov-report=term-missing
+          --cov-report=xml:reports/ci/coverage.xml
+          --cov-report=html:reports/ci/htmlcov
+          --cov-fail-under=90
+          --junitxml=reports/ci/junit.xml
+      - name: Résumé dans l'interface GitHub
+        if: always()
+        run: |
+          {
+            echo "## Résultats (Python ${{ matrix.python-version }})"
+            python -c "import xml.etree.ElementTree as E; s=E.parse('reports/ci/junit.xml').getroot().find('testsuite'); print(f\"Tests : {s.get('tests')} | échecs : {s.get('failures')} | erreurs : {s.get('errors')} | ignorés : {s.get('skipped')}\")" || true
+            python -c "import xml.etree.ElementTree as E; r=E.parse('reports/ci/coverage.xml').getroot(); print(f\"Couverture lignes : {float(r.get('line-rate'))*100:.1f} % | branches : {float(r.get('branch-rate'))*100:.1f} %\")" || true
+            echo ""
+            cat reports/ci/tracabilite.md 2>/dev/null | head -30 || true
+          } >> "$GITHUB_STEP_SUMMARY"
+      - name: Archiver les rapports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: rapports-python-${{ matrix.python-version }}
+          path: reports/ci/
+          retention-days: 30

@@ -1,0 +1,77 @@
+{
+  "configuration": "uvicorn --workers 4, même machine, client httpx asynchrone",
+  "charge_progressive": [
+    {
+      "utilisateurs_simultanes": 1,
+      "n": 4046,
+      "moyenne_ms": 1.9774390148400944,
+      "p50_ms": 1.9183329932275228,
+      "p95_ms": 2.251197500299895,
+      "p99_ms": 2.677287496044302,
+      "max_ms": 42.37895800906699,
+      "debit_req_s": 505.6502815303083,
+      "erreurs": 0,
+      "taux_erreur": 0.0
+    },
+    {
+      "utilisateurs_simultanes": 5,
+      "n": 7778,
+      "moyenne_ms": 5.1427888669774555,
+      "p50_ms": 4.874770500464365,
+      "p95_ms": 7.112393693387275,
+      "p99_ms": 9.744334653805707,
+      "max_ms": 27.45395799865946,
+      "debit_req_s": 971.9432000535996,
+      "erreurs": 0,
+      "taux_erreur": 0.0
+    },
+    {
+      "utilisateurs_simultanes": 10,
+      "n": 5708,
+      "moyenne_ms": 14.016933018513713,
+      "p50_ms": 11.15260450023925,
+      "p95_ms": 32.63860635779561,
+      "p99_ms": 50.919240132061944,
+      "max_ms": 135.75829099863768,
+      "debit_req_s": 712.9575914886777,
+      "erreurs": 0,
+      "taux_erreur": 0.0
+    },
+    {
+      "utilisateurs_simultanes": 20,
+      "n": 2711,
+      "moyenne_ms": 59.11555188828223,
+      "p50_ms": 26.315959010389633,
+      "p95_ms": 243.02541650104104,
+      "p99_ms": 635.293366102269,
+      "max_ms": 1493.3046669902978,
+      "debit_req_s": 337.7045879979713,
+      "erreurs": 0,
+      "taux_erreur": 0.0
+    },
+    {
+      "utilisateurs_simultanes": 50,
+      "n": 1514,
+      "moyenne_ms": 265.83629206206905,
+      "p50_ms": 134.44929150864482,
+      "p95_ms": 988.1605186550582,
+      "p99_ms": 1656.241800338318,
+      "max_ms": 2657.7691250131465,
+      "debit_req_s": 186.2972812410439,
+      "erreurs": 0,
+      "taux_erreur": 0.0
+    },
+    {
+      "utilisateurs_simultanes": 100,
+      "n": 1185,
+      "moyenne_ms": 687.9098354692533,
+      "p50_ms": 330.30250000592787,
+      "p95_ms": 2810.188883409136,
+      "p99_ms": 4922.50248127559,
+      "max_ms": 6677.0354170002975,
+      "debit_req_s": 142.41799637286388,
+      "erreurs": 0,
+      "taux_erreur": 0.0
+    }
+  ]
+}

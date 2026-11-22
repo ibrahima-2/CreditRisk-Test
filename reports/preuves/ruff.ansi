@@ -1,0 +1,3 @@
+[1;32m(.venv) CreditRisk-Test %[0m ruff check . && ruff format --check .
+All checks passed!
+30 files already formatted

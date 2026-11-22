@@ -1,0 +1,31 @@
+# Environnements et caches
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.hypothesis/
+
+# Couverture et rapports générés à chaque exécution (à la racine ; les preuves de
+# reports/preuves/ sont versionnées)
+/.coverage
+/.coverage.*
+/coverage.xml
+/htmlcov/
+reports/ci/
+outils_rapport/node_modules/
+
+# Système / éditeurs
+.DS_Store
+.idea/
+.vscode/
+
+# NB : model/*.joblib et data/*.csv sont VERSIONNÉS volontairement (modèle de test maîtrisé).
+
+# Rapport de qualification : remis séparément, non publié dans le dépôt
+reports/Rapport_qualification_CreditRisk.docx
+reports/06_rapport_qualification.md
+
+# Fichiers verrous de Microsoft Office
+~$*

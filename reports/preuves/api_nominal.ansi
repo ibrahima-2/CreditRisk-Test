@@ -1,0 +1,19 @@
+[1;32m(.venv) CreditRisk-Test %[0m curl -s -X POST 127.0.0.1:8010/predict -H 'Content-Type: application/json' -d '{"age": 35, "revenu_mensuel": 250000, "montant_credit": 1000000, "duree_mois": 12, "anciennete_activite": 4}' | python -m json.tool --no-ensure-ascii
+{
+    "probabilite_defaut": 0.10938402190541781,
+    "niveau_risque": "MODERE",
+    "revue_humaine_requise": true,
+    "alertes": [],
+    "indicateurs": {
+        "mensualite_estimee": 83333.33,
+        "taux_endettement": 0.3333333333333333
+    },
+    "seuils": {
+        "risque_modere": 0.09,
+        "risque_eleve": 0.21
+    },
+    "version_modele": "1.0.0",
+    "identifiant_requete": "5faac16fabc14582acd8e52582ef9cbf",
+    "avertissement": "Estimation statistique d'aide à la décision : elle ne constitue pas une décision de crédit et doit être interprétée par un agent habilité."
+}
+

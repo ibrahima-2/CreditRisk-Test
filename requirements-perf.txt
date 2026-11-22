@@ -1,0 +1,6 @@
+# Outils optionnels de mesure de performance (non installés en CI).
+# La charge progressive de référence utilise ApacheBench (ab), fourni avec macOS
+# (paquet apache2-utils sous Debian/Ubuntu).
+-r requirements.txt
+locust==2.47.0
+matplotlib==3.10.0

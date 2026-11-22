@@ -1,0 +1,239 @@
+{
+  "date": "2026-11-22 15:32:50",
+  "configuration": {
+    "systeme": "Darwin 24.6.0 (arm64)",
+    "processeur": "Apple M4 Pro",
+    "coeurs_logiques": 12,
+    "memoire_go": 24.0,
+    "python": "3.13.5",
+    "scikit-learn": "1.9.1",
+    "numpy": "2.5.5",
+    "serveur": "uvicorn, endpoint synchrone exécuté dans le pool de threads",
+    "generateur_de_charge": "ApacheBench (ab), connexions persistantes, même machine"
+  },
+  "inference": [
+    {
+      "version": "1.0.0",
+      "inference_threads_defaut": {
+        "n": 5000,
+        "moyenne_ms": 0.10515258269733749,
+        "p50_ms": 0.10320798901375383,
+        "p95_ms": 0.11366910330252723,
+        "p99_ms": 0.2194646710995586,
+        "max_ms": 0.39929201011545956
+      },
+      "inference_1_thread": {
+        "n": 5000,
+        "moyenne_ms": 0.10629590770986397,
+        "p50_ms": 0.10362500324845314,
+        "p95_ms": 0.11517115053720774,
+        "p99_ms": 0.2297325718973303,
+        "max_ms": 0.49862499872688204
+      },
+      "pipeline_complet_1_thread": {
+        "n": 5000,
+        "moyenne_ms": 0.13380260291160084,
+        "p50_ms": 0.12766699364874512,
+        "p95_ms": 0.14904819618095647,
+        "p99_ms": 0.3213390783639635,
+        "max_ms": 1.3401250034803525
+      }
+    },
+    {
+      "version": "1.1.0",
+      "inference_threads_defaut": {
+        "n": 5000,
+        "moyenne_ms": 5.221473978940049,
+        "p50_ms": 3.9002915000310168,
+        "p95_ms": 11.23040144884726,
+        "p99_ms": 16.0409429109132,
+        "max_ms": 70.24262500635814
+      },
+      "inference_1_thread": {
+        "n": 5000,
+        "moyenne_ms": 0.3946098017739132,
+        "p50_ms": 0.39170899253804237,
+        "p95_ms": 0.40808304693200625,
+        "p99_ms": 0.46075708130956644,
+        "max_ms": 1.4926250005373731
+      },
+      "pipeline_complet_1_thread": {
+        "n": 5000,
+        "moyenne_ms": 0.4254747365950607,
+        "p50_ms": 0.42041699634864926,
+        "p95_ms": 0.4486249963520095,
+        "p99_ms": 0.5201279223547318,
+        "max_ms": 1.6434580029454082
+      }
+    }
+  ],
+  "charge_progressive": {
+    "1_processus": [
+      {
+        "utilisateurs_simultanes": 1,
+        "requetes": 4000,
+        "debit_req_s": 839.48,
+        "moyenne_ms": 1.191,
+        "p50_ms": 1.0,
+        "p95_ms": 1.0,
+        "p99_ms": 2.0,
+        "max_ms": 4.0,
+        "echecs": 0
+      },
+      {
+        "utilisateurs_simultanes": 2,
+        "requetes": 4000,
+        "debit_req_s": 1256.16,
+        "moyenne_ms": 1.592,
+        "p50_ms": 2.0,
+        "p95_ms": 2.0,
+        "p99_ms": 2.0,
+        "max_ms": 6.0,
+        "echecs": 0
+      },
+      {
+        "utilisateurs_simultanes": 5,
+        "requetes": 4000,
+        "debit_req_s": 1510.74,
+        "moyenne_ms": 3.31,
+        "p50_ms": 3.0,
+        "p95_ms": 4.0,
+        "p99_ms": 6.0,
+        "max_ms": 51.0,
+        "echecs": 0
+      },
+      {
+        "utilisateurs_simultanes": 10,
+        "requetes": 4000,
+        "debit_req_s": 1658.19,
+        "moyenne_ms": 6.031,
+        "p50_ms": 6.0,
+        "p95_ms": 7.0,
+        "p99_ms": 10.0,
+        "max_ms": 26.0,
+        "echecs": 0
+      },
+      {
+        "utilisateurs_simultanes": 20,
+        "requetes": 8000,
+        "debit_req_s": 1790.15,
+        "moyenne_ms": 11.172,
+        "p50_ms": 11.0,
+        "p95_ms": 14.0,
+        "p99_ms": 21.0,
+        "max_ms": 37.0,
+        "echecs": 0
+      },
+      {
+        "utilisateurs_simultanes": 50,
+        "requetes": 20000,
+        "debit_req_s": 1900.36,
+        "moyenne_ms": 26.311,
+        "p50_ms": 26.0,
+        "p95_ms": 34.0,
+        "p99_ms": 46.0,
+        "max_ms": 51.0,
+        "echecs": 0
+      },
+      {
+        "utilisateurs_simultanes": 100,
+        "requetes": 40000,
+        "debit_req_s": 1904.13,
+        "moyenne_ms": 52.517,
+        "p50_ms": 51.0,
+        "p95_ms": 69.0,
+        "p99_ms": 76.0,
+        "max_ms": 93.0,
+        "echecs": 0
+      }
+    ],
+    "4_processus": [
+      {
+        "utilisateurs_simultanes": 1,
+        "requetes": 4000,
+        "debit_req_s": 740.91,
+        "moyenne_ms": 1.35,
+        "p50_ms": 1.0,
+        "p95_ms": 2.0,
+        "p99_ms": 2.0,
+        "max_ms": 37.0,
+        "echecs": 0
+      },
+      {
+        "utilisateurs_simultanes": 2,
+        "requetes": 4000,
+        "debit_req_s": 1229.07,
+        "moyenne_ms": 1.627,
+        "p50_ms": 1.0,
+        "p95_ms": 2.0,
+        "p99_ms": 3.0,
+        "max_ms": 18.0,
+        "echecs": 0
+      },
+      {
+        "utilisateurs_simultanes": 5,
+        "requetes": 4000,
+        "debit_req_s": 3107.77,
+        "moyenne_ms": 1.609,
+        "p50_ms": 1.0,
+        "p95_ms": 2.0,
+        "p99_ms": 2.0,
+        "max_ms": 23.0,
+        "echecs": 0
+      },
+      {
+        "utilisateurs_simultanes": 10,
+        "requetes": 4000,
+        "debit_req_s": 3888.77,
+        "moyenne_ms": 2.572,
+        "p50_ms": 2.0,
+        "p95_ms": 4.0,
+        "p99_ms": 6.0,
+        "max_ms": 12.0,
+        "echecs": 0
+      },
+      {
+        "utilisateurs_simultanes": 20,
+        "requetes": 8000,
+        "debit_req_s": 4800.27,
+        "moyenne_ms": 4.166,
+        "p50_ms": 4.0,
+        "p95_ms": 6.0,
+        "p99_ms": 7.0,
+        "max_ms": 16.0,
+        "echecs": 0
+      },
+      {
+        "utilisateurs_simultanes": 50,
+        "requetes": 20000,
+        "debit_req_s": 5381.04,
+        "moyenne_ms": 9.292,
+        "p50_ms": 9.0,
+        "p95_ms": 13.0,
+        "p99_ms": 19.0,
+        "max_ms": 33.0,
+        "echecs": 0
+      },
+      {
+        "utilisateurs_simultanes": 100,
+        "requetes": 40000,
+        "debit_req_s": 5617.89,
+        "moyenne_ms": 17.8,
+        "p50_ms": 17.0,
+        "p95_ms": 25.0,
+        "p99_ms": 37.0,
+        "max_ms": 60.0,
+        "echecs": 0
+      }
+    ]
+  },
+  "api_sequentielle": {
+    "n": 2000,
+    "moyenne_ms": 1.0237368870220962,
+    "p50_ms": 0.9838545011007227,
+    "p95_ms": 1.1765556017053314,
+    "p99_ms": 1.4155425089120397,
+    "max_ms": 18.530499990447424,
+    "debit_req_s": 976.8134885799188
+  }
+}

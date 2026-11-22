@@ -1,0 +1,75 @@
+{
+  "nom": "credit-risk",
+  "version": "1.1.0",
+  "algorithme": "HistGradientBoostingClassifier (contraintes de monotonie)",
+  "date_entrainement": "2026-11-22T15:10:28+00:00",
+  "variables_modele": [
+    "age",
+    "log_revenu_mensuel",
+    "duree_mois",
+    "anciennete_activite",
+    "taux_endettement"
+  ],
+  "seuils": {
+    "risque_modere": 0.08,
+    "risque_eleve": 0.16
+  },
+  "domaine_entrainement": {
+    "age": {
+      "min": 18.0,
+      "max": 70.0
+    },
+    "revenu_mensuel": {
+      "min": 30000.0,
+      "max": 1364000.0
+    },
+    "montant_credit": {
+      "min": 50000.0,
+      "max": 19800000.0
+    },
+    "duree_mois": {
+      "min": 3.0,
+      "max": 60.0
+    },
+    "anciennete_activite": {
+      "min": 0.0,
+      "max": 41.0
+    },
+    "taux_endettement": {
+      "min": 0.050793650793650794,
+      "max": 1.1280411336844745
+    }
+  },
+  "metriques_test": {
+    "roc_auc": 0.7662076923076924,
+    "rappel": 0.805,
+    "precision": 0.21381142098273573,
+    "f1": 0.3378803777544596,
+    "exactitude": 0.5793333333333334,
+    "brier": 0.10102713647774404,
+    "taux_faux_negatifs": 0.195,
+    "seuil": 0.08,
+    "effectif": 1500,
+    "taux_defaut": 0.13333333333333333,
+    "matrice_confusion": {
+      "vn": 708,
+      "fp": 592,
+      "fn": 39,
+      "vp": 161
+    }
+  },
+  "jeu_donnees": {
+    "type": "synthetique",
+    "graine": 42,
+    "effectif_apprentissage": 4500,
+    "effectif_test": 1500,
+    "avertissement": "Données simulées : elles servent à tester le système et ne démontrent pas la performance réelle d'un modèle de crédit."
+  },
+  "sha256": "237078beda68f29c5c5e76f296946472f3134bc20b617ebfb9c5f7e295aed509",
+  "versions_logicielles": {
+    "python": "3.13.5",
+    "scikit-learn": "1.9.1",
+    "numpy": "2.5.5",
+    "joblib": "1.6.0"
+  }
+}

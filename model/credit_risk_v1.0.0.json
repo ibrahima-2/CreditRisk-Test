@@ -1,0 +1,75 @@
+{
+  "nom": "credit-risk",
+  "version": "1.0.0",
+  "algorithme": "StandardScaler + LogisticRegression",
+  "date_entrainement": "2026-11-22T15:10:29+00:00",
+  "variables_modele": [
+    "age",
+    "log_revenu_mensuel",
+    "duree_mois",
+    "anciennete_activite",
+    "taux_endettement"
+  ],
+  "seuils": {
+    "risque_modere": 0.09,
+    "risque_eleve": 0.21
+  },
+  "domaine_entrainement": {
+    "age": {
+      "min": 18.0,
+      "max": 70.0
+    },
+    "revenu_mensuel": {
+      "min": 30000.0,
+      "max": 1364000.0
+    },
+    "montant_credit": {
+      "min": 50000.0,
+      "max": 19800000.0
+    },
+    "duree_mois": {
+      "min": 3.0,
+      "max": 60.0
+    },
+    "anciennete_activite": {
+      "min": 0.0,
+      "max": 41.0
+    },
+    "taux_endettement": {
+      "min": 0.050793650793650794,
+      "max": 1.1280411336844745
+    }
+  },
+  "metriques_test": {
+    "roc_auc": 0.7762384615384615,
+    "rappel": 0.825,
+    "precision": 0.22602739726027396,
+    "f1": 0.3548387096774194,
+    "exactitude": 0.6,
+    "brier": 0.0993115941834512,
+    "taux_faux_negatifs": 0.175,
+    "seuil": 0.09,
+    "effectif": 1500,
+    "taux_defaut": 0.13333333333333333,
+    "matrice_confusion": {
+      "vn": 735,
+      "fp": 565,
+      "fn": 35,
+      "vp": 165
+    }
+  },
+  "jeu_donnees": {
+    "type": "synthetique",
+    "graine": 42,
+    "effectif_apprentissage": 4500,
+    "effectif_test": 1500,
+    "avertissement": "Données simulées : elles servent à tester le système et ne démontrent pas la performance réelle d'un modèle de crédit."
+  },
+  "sha256": "a2d685705fa03129e9a46406b57170245f8059e3cae45a101f5416515308ef59",
+  "versions_logicielles": {
+    "python": "3.13.5",
+    "scikit-learn": "1.9.1",
+    "numpy": "2.5.5",
+    "joblib": "1.6.0"
+  }
+}

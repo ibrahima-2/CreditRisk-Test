@@ -1,0 +1,468 @@
+{
+  "version_reference": "1.0.0",
+  "sha256_modele": "a2d685705fa03129e9a46406b57170245f8059e3cae45a101f5416515308ef59",
+  "date_gel": "2026-11-22T15:11:17+00:00",
+  "seuils": {
+    "risque_modere": 0.09,
+    "risque_eleve": 0.21
+  },
+  "metriques": {
+    "roc_auc": 0.7762384615384615,
+    "rappel": 0.825,
+    "precision": 0.22602739726027396,
+    "f1": 0.3548387096774194,
+    "exactitude": 0.6,
+    "brier": 0.0993115941834512,
+    "taux_faux_negatifs": 0.175,
+    "seuil": 0.09,
+    "effectif": 1500,
+    "taux_defaut": 0.13333333333333333,
+    "matrice_confusion": {
+      "vn": 735,
+      "fp": 565,
+      "fn": 35,
+      "vp": 165
+    }
+  },
+  "profils": [
+    {
+      "id": "G01",
+      "description": "Profil nominal (exemple de l'énoncé)",
+      "entree": {
+        "age": 35,
+        "revenu_mensuel": 250000,
+        "montant_credit": 1000000,
+        "duree_mois": 12,
+        "anciennete_activite": 4
+      },
+      "probabilite_defaut": 0.10938402190541781,
+      "niveau_risque": "MODERE",
+      "alertes": []
+    },
+    {
+      "id": "G02",
+      "description": "Profil a priori peu risqué",
+      "entree": {
+        "age": 50,
+        "revenu_mensuel": 800000,
+        "montant_credit": 1000000,
+        "duree_mois": 12,
+        "anciennete_activite": 20
+      },
+      "probabilite_defaut": 0.000721215946192957,
+      "niveau_risque": "FAIBLE",
+      "alertes": []
+    },
+    {
+      "id": "G03",
+      "description": "Jeune, faible revenu, endettement très élevé",
+      "entree": {
+        "age": 22,
+        "revenu_mensuel": 60000,
+        "montant_credit": 1500000,
+        "duree_mois": 12,
+        "anciennete_activite": 1
+      },
+      "probabilite_defaut": 0.9999683170750303,
+      "niveau_risque": "ELEVE",
+      "alertes": [
+        "HORS_DOMAINE_TAUX_ENDETTEMENT"
+      ]
+    },
+    {
+      "id": "G04",
+      "description": "Borne basse : 18 ans, ancienneté nulle",
+      "entree": {
+        "age": 18,
+        "revenu_mensuel": 100000,
+        "montant_credit": 300000,
+        "duree_mois": 6,
+        "anciennete_activite": 0
+      },
+      "probabilite_defaut": 0.6934212719788206,
+      "niveau_risque": "ELEVE",
+      "alertes": []
+    },
+    {
+      "id": "G05",
+      "description": "Borne haute : 75 ans, ancienneté 60 ans (hors domaine)",
+      "entree": {
+        "age": 75,
+        "revenu_mensuel": 300000,
+        "montant_credit": 1000000,
+        "duree_mois": 24,
+        "anciennete_activite": 60
+      },
+      "probabilite_defaut": 3.702117820882746e-06,
+      "niveau_risque": "FAIBLE",
+      "alertes": [
+        "HORS_DOMAINE_AGE",
+        "HORS_DOMAINE_ANCIENNETE_ACTIVITE"
+      ]
+    },
+    {
+      "id": "G06",
+      "description": "Durée minimale (1 mois)",
+      "entree": {
+        "age": 40,
+        "revenu_mensuel": 200000,
+        "montant_credit": 100000,
+        "duree_mois": 1,
+        "anciennete_activite": 5
+      },
+      "probabilite_defaut": 0.17222112800509043,
+      "niveau_risque": "MODERE",
+      "alertes": [
+        "HORS_DOMAINE_DUREE_MOIS"
+      ]
+    },
+    {
+      "id": "G07",
+      "description": "Durée maximale (120 mois, hors domaine)",
+      "entree": {
+        "age": 40,
+        "revenu_mensuel": 500000,
+        "montant_credit": 10000000,
+        "duree_mois": 120,
+        "anciennete_activite": 10
+      },
+      "probabilite_defaut": 0.10852522321551092,
+      "niveau_risque": "MODERE",
+      "alertes": [
+        "HORS_DOMAINE_DUREE_MOIS"
+      ]
+    },
+    {
+      "id": "G08",
+      "description": "Revenu très élevé mais valide (hors domaine)",
+      "entree": {
+        "age": 45,
+        "revenu_mensuel": 20000000,
+        "montant_credit": 5000000,
+        "duree_mois": 12,
+        "anciennete_activite": 15
+      },
+      "probabilite_defaut": 8.291718416827719e-05,
+      "niveau_risque": "FAIBLE",
+      "alertes": [
+        "HORS_DOMAINE_REVENU_MENSUEL",
+        "HORS_DOMAINE_TAUX_ENDETTEMENT"
+      ]
+    },
+    {
+      "id": "G09",
+      "description": "Montant très élevé mais valide (hors domaine)",
+      "entree": {
+        "age": 45,
+        "revenu_mensuel": 2000000,
+        "montant_credit": 400000000,
+        "duree_mois": 60,
+        "anciennete_activite": 15
+      },
+      "probabilite_defaut": 0.9999979081284124,
+      "niveau_risque": "ELEVE",
+      "alertes": [
+        "HORS_DOMAINE_REVENU_MENSUEL",
+        "HORS_DOMAINE_MONTANT_CREDIT",
+        "HORS_DOMAINE_TAUX_ENDETTEMENT"
+      ]
+    },
+    {
+      "id": "G10",
+      "description": "Revenu très faible (hors domaine)",
+      "entree": {
+        "age": 30,
+        "revenu_mensuel": 1000,
+        "montant_credit": 50000,
+        "duree_mois": 12,
+        "anciennete_activite": 3
+      },
+      "probabilite_defaut": 0.9999999999892031,
+      "niveau_risque": "ELEVE",
+      "alertes": [
+        "HORS_DOMAINE_REVENU_MENSUEL",
+        "HORS_DOMAINE_TAUX_ENDETTEMENT"
+      ]
+    },
+    {
+      "id": "G11",
+      "description": "Mensualité égale au revenu (endettement 100 %)",
+      "entree": {
+        "age": 30,
+        "revenu_mensuel": 100000,
+        "montant_credit": 1200000,
+        "duree_mois": 12,
+        "anciennete_activite": 3
+      },
+      "probabilite_defaut": 0.949320635322173,
+      "niveau_risque": "ELEVE",
+      "alertes": []
+    },
+    {
+      "id": "G12",
+      "description": "Artisan expérimenté, demande modérée",
+      "entree": {
+        "age": 42,
+        "revenu_mensuel": 150000,
+        "montant_credit": 600000,
+        "duree_mois": 18,
+        "anciennete_activite": 8
+      },
+      "probabilite_defaut": 0.04452404790942994,
+      "niveau_risque": "FAIBLE",
+      "alertes": []
+    },
+    {
+      "id": "T01",
+      "description": "Ligne 1 du jeu de test",
+      "entree": {
+        "age": 18,
+        "revenu_mensuel": 152000.0,
+        "montant_credit": 340000.0,
+        "duree_mois": 9,
+        "anciennete_activite": 2.0
+      },
+      "probabilite_defaut": 0.2322172524789401,
+      "niveau_risque": "ELEVE",
+      "alertes": []
+    },
+    {
+      "id": "T02",
+      "description": "Ligne 2 du jeu de test",
+      "entree": {
+        "age": 35,
+        "revenu_mensuel": 100000.0,
+        "montant_credit": 930000.0,
+        "duree_mois": 24,
+        "anciennete_activite": 2.7
+      },
+      "probabilite_defaut": 0.3580339170762572,
+      "niveau_risque": "ELEVE",
+      "alertes": []
+    },
+    {
+      "id": "T03",
+      "description": "Ligne 3 du jeu de test",
+      "entree": {
+        "age": 39,
+        "revenu_mensuel": 79000.0,
+        "montant_credit": 160000.0,
+        "duree_mois": 6,
+        "anciennete_activite": 0.1
+      },
+      "probabilite_defaut": 0.27741977873581325,
+      "niveau_risque": "ELEVE",
+      "alertes": []
+    },
+    {
+      "id": "T04",
+      "description": "Ligne 4 du jeu de test",
+      "entree": {
+        "age": 38,
+        "revenu_mensuel": 263000.0,
+        "montant_credit": 1020000.0,
+        "duree_mois": 18,
+        "anciennete_activite": 18.2
+      },
+      "probabilite_defaut": 0.0087030963975906,
+      "niveau_risque": "FAIBLE",
+      "alertes": []
+    },
+    {
+      "id": "T05",
+      "description": "Ligne 5 du jeu de test",
+      "entree": {
+        "age": 50,
+        "revenu_mensuel": 465000.0,
+        "montant_credit": 3700000.0,
+        "duree_mois": 36,
+        "anciennete_activite": 1.4
+      },
+      "probabilite_defaut": 0.04542575716494844,
+      "niveau_risque": "FAIBLE",
+      "alertes": []
+    },
+    {
+      "id": "T06",
+      "description": "Ligne 6 du jeu de test",
+      "entree": {
+        "age": 34,
+        "revenu_mensuel": 530000.0,
+        "montant_credit": 980000.0,
+        "duree_mois": 12,
+        "anciennete_activite": 7.2
+      },
+      "probabilite_defaut": 0.01573522404552673,
+      "niveau_risque": "FAIBLE",
+      "alertes": []
+    },
+    {
+      "id": "T07",
+      "description": "Ligne 7 du jeu de test",
+      "entree": {
+        "age": 42,
+        "revenu_mensuel": 156000.0,
+        "montant_credit": 1430000.0,
+        "duree_mois": 24,
+        "anciennete_activite": 5.0
+      },
+      "probabilite_defaut": 0.16619889830717785,
+      "niveau_risque": "MODERE",
+      "alertes": []
+    },
+    {
+      "id": "T08",
+      "description": "Ligne 8 du jeu de test",
+      "entree": {
+        "age": 30,
+        "revenu_mensuel": 158000.0,
+        "montant_credit": 1560000.0,
+        "duree_mois": 24,
+        "anciennete_activite": 2.1
+      },
+      "probabilite_defaut": 0.3791664764350142,
+      "niveau_risque": "ELEVE",
+      "alertes": []
+    },
+    {
+      "id": "T09",
+      "description": "Ligne 9 du jeu de test",
+      "entree": {
+        "age": 49,
+        "revenu_mensuel": 76000.0,
+        "montant_credit": 750000.0,
+        "duree_mois": 24,
+        "anciennete_activite": 0.3
+      },
+      "probabilite_defaut": 0.3624342214170234,
+      "niveau_risque": "ELEVE",
+      "alertes": []
+    },
+    {
+      "id": "T10",
+      "description": "Ligne 10 du jeu de test",
+      "entree": {
+        "age": 45,
+        "revenu_mensuel": 252000.0,
+        "montant_credit": 1260000.0,
+        "duree_mois": 24,
+        "anciennete_activite": 6.3
+      },
+      "probabilite_defaut": 0.03439077630490632,
+      "niveau_risque": "FAIBLE",
+      "alertes": []
+    },
+    {
+      "id": "T11",
+      "description": "Ligne 11 du jeu de test",
+      "entree": {
+        "age": 47,
+        "revenu_mensuel": 198000.0,
+        "montant_credit": 500000.0,
+        "duree_mois": 24,
+        "anciennete_activite": 2.5
+      },
+      "probabilite_defaut": 0.03445487483597559,
+      "niveau_risque": "FAIBLE",
+      "alertes": []
+    },
+    {
+      "id": "T12",
+      "description": "Ligne 12 du jeu de test",
+      "entree": {
+        "age": 39,
+        "revenu_mensuel": 221000.0,
+        "montant_credit": 450000.0,
+        "duree_mois": 12,
+        "anciennete_activite": 0.3
+      },
+      "probabilite_defaut": 0.06575712063304893,
+      "niveau_risque": "FAIBLE",
+      "alertes": []
+    },
+    {
+      "id": "T13",
+      "description": "Ligne 13 du jeu de test",
+      "entree": {
+        "age": 44,
+        "revenu_mensuel": 279000.0,
+        "montant_credit": 700000.0,
+        "duree_mois": 12,
+        "anciennete_activite": 10.3
+      },
+      "probabilite_defaut": 0.01496544535487851,
+      "niveau_risque": "FAIBLE",
+      "alertes": []
+    },
+    {
+      "id": "T14",
+      "description": "Ligne 14 du jeu de test",
+      "entree": {
+        "age": 23,
+        "revenu_mensuel": 98000.0,
+        "montant_credit": 380000.0,
+        "duree_mois": 24,
+        "anciennete_activite": 4.1
+      },
+      "probabilite_defaut": 0.1798966801826309,
+      "niveau_risque": "MODERE",
+      "alertes": []
+    },
+    {
+      "id": "T15",
+      "description": "Ligne 15 du jeu de test",
+      "entree": {
+        "age": 35,
+        "revenu_mensuel": 201000.0,
+        "montant_credit": 290000.0,
+        "duree_mois": 12,
+        "anciennete_activite": 1.9
+      },
+      "probabilite_defaut": 0.052447592534574615,
+      "niveau_risque": "FAIBLE",
+      "alertes": []
+    },
+    {
+      "id": "T16",
+      "description": "Ligne 16 du jeu de test",
+      "entree": {
+        "age": 35,
+        "revenu_mensuel": 431000.0,
+        "montant_credit": 1600000.0,
+        "duree_mois": 18,
+        "anciennete_activite": 1.0
+      },
+      "probabilite_defaut": 0.06086879537582148,
+      "niveau_risque": "FAIBLE",
+      "alertes": []
+    },
+    {
+      "id": "T17",
+      "description": "Ligne 17 du jeu de test",
+      "entree": {
+        "age": 48,
+        "revenu_mensuel": 150000.0,
+        "montant_credit": 1060000.0,
+        "duree_mois": 24,
+        "anciennete_activite": 2.9
+      },
+      "probabilite_defaut": 0.10927069898523441,
+      "niveau_risque": "MODERE",
+      "alertes": []
+    },
+    {
+      "id": "T18",
+      "description": "Ligne 18 du jeu de test",
+      "entree": {
+        "age": 21,
+        "revenu_mensuel": 237000.0,
+        "montant_credit": 670000.0,
+        "duree_mois": 12,
+        "anciennete_activite": 0.8
+      },
+      "probabilite_defaut": 0.17686437205021138,
+      "niveau_risque": "MODERE",
+      "alertes": []
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+[1;32m(.venv) CreditRisk-Test %[0m curl -s -i 127.0.0.1:8011/health | grep -E '^HTTP|^\{'
+HTTP/1.1 503 Service Unavailable
+{"statut":"degrade","modele_charge":false,"version_modele":null,"version_api":"1.0.0"}
+
+[1;32m(.venv) CreditRisk-Test %[0m curl -s -i -X POST 127.0.0.1:8011/predict -H 'Content-Type: application/json' -d '{"age": 35, "revenu_mensuel": 250000, "montant_credit": 1000000, "duree_mois": 12, "anciennete_activite": 4}' | grep -iE '^HTTP|^retry-after|^\{'
+HTTP/1.1 503 Service Unavailable
+retry-after: 30
+{"code":"MODELE_INDISPONIBLE","message":"Le modèle de prédiction est momentanément indisponible. Réessayez plus tard.","details":[],"identifiant_requete":"dca768a327a1490787ce24e75a892e94"}
+

@@ -1,0 +1,18 @@
+# Environnement épinglé (Python 3.12 / 3.13). Le modèle versionné a été sérialisé avec
+# scikit-learn 1.9.1 : changer cette version impose de ré-entraîner et de re-geler la référence.
+# --- Service
+fastapi==0.165.0
+starlette==1.10.0
+pydantic==2.14.4
+pydantic_core==2.50.5
+uvicorn==0.54.0
+numpy==2.5.5
+scipy==1.18.1
+scikit-learn==1.9.1
+joblib==1.6.0
+# --- Tests et qualité
+pytest==9.2.0
+pytest-cov==7.1.0
+httpx==0.28.1
+hypothesis==6.170.17
+ruff==0.17.6

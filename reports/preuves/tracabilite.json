@@ -1,0 +1,1042 @@
+{
+  "EX04": {
+    "tests/test_api.py::test_s1_requete_valide": {
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0,
+      "xfailed": 0
+    },
+    "tests/test_api.py::test_s1_exemple_de_l_enonce_sans_cycle_de_vie": {
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0,
+      "xfailed": 0
+    },
+    "tests/test_integration.py::test_scenario_principal_bout_en_bout": {
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0,
+      "xfailed": 0
+    },
+    "tests/test_integration.py::test_sortie_du_modele_non_conforme": {
+      "passed": 6,
+      "failed": 0,
+      "skipped": 0,
+      "xfailed": 0
+    },
+    "tests/test_robustness.py::test_valeurs_aux_limites": {
+      "passed": 20,
+      "failed": 0,
+      "skipped": 0,
+      "xfailed": 0
+    },
+    "tests/test_robustness.py::test_hors_domaine_accepte_avec_alerte": {
+      "passed": 5,
+      "failed": 0,
+      "skipped": 0,
+      "xfailed": 0
+    },
+    "tests/test_robustness.py::test_propriete_toute_demande_valide_donne_une_probabilite": {
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0,
+      "xfailed": 0
+    }
+  },
+  "EX20": {
+    "tests/test_api.py::test_s1_requete_valide": {
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0,
+      "xfailed": 0
+    },
+    "tests/test_api.py::test_s1_profil_dans_le_domaine_sans_alerte": {
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0,
+      "xfailed": 0
+    },
+    "tests/test_donnees.py::test_toutes_les_lignes_respectent_le_contrat_d_entree": {
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0,
+      "xfailed": 0
+    },
+    "tests/test_integration.py::test_scenario_principal_bout_en_bout": {
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0,
+      "xfailed": 0
+    },
+    "tests/test_integration.py::test_requete_invalide_n_atteint_ni_pretraitement_ni_modele": {
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0,
+      "xfailed": 0
+    },
+    "tests/test_preprocessing.py::test_indicateurs_pour_l_agent": {
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0,
+      "xfailed": 0
+    },
+    "tests/test_regression.py::test_contrat_de_sortie_sur_les_profils_de_reference": {
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0,
+      "xfailed": 0
+    },
+    "tests/test_robustness.py::test_propriete_toute_demande_valide_donne_une_probabilite": {
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0,
+      "xfailed": 0
+    },
+    "tests/test_validation.py::test_demande_nominale_acceptee": {
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0,
+      "xfailed": 0
+    },
+    "tests/test_validation.py::test_demande_validee_est_immuable": {
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0,
+      "xfailed": 0
+    }
+  },
+  "EX05": {
+    "tests/test_api.py::test_s1_exemple_de_l_enonce_sans_cycle_de_vie": {
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0,
+      "xfailed": 0
+    },
+    "tests/test_api.py::test_s9_predict_modele_indisponible": {
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0,
+      "xfailed": 0
+    },
+    "tests/test_api.py::test_s9_health_signale_l_indisponibilite": {
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0,
+      "xfailed": 0
+    },
+    "tests/test_api.py::test_s9_model_info_indisponible": {
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0,
+      "xfailed": 0
+    },
+    "tests/test_api.py::test_s9_validation_prioritaire_sur_disponibilite": {
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0,
+      "xfailed": 0
+    },
+    "tests/test_api.py::test_health_nominal": {
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0,
+      "xfailed": 0
+    },
+    "tests/test_integration.py::test_modele_non_chargeable": {
+      "passed": 10,
+      "failed": 0,
+      "skipped": 0,
+      "xfailed": 0
+    },
+    "tests/test_integration.py::test_rechargement_automatique_apres_restauration": {
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0,
+      "xfailed": 0
+    }
+  },
+  "EX15": {
+    "tests/test_api.py::test_s1_profil_dans_le_domaine_sans_alerte": {
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0,
+      "xfailed": 0
+    },
+    "tests/test_robustness.py::test_hors_domaine_accepte_avec_alerte": {
+      "passed": 5,
+      "failed": 0,
+      "skipped": 0,
+      "xfailed": 0
+    },
+    "tests/test_robustness.py::test_probabilite_saturee_toujours_signalee": {
+      "passed": 5,
+      "failed": 0,
+      "skipped": 0,
+      "xfailed": 0
+    }
+  },
+  "EX06": {
+    "tests/test_api.py::test_s2_champ_obligatoire_absent": {
+      "passed": 5,
+      "failed": 0,
+      "skipped": 0,
+      "xfailed": 0
+    },
+    "tests/test_api.py::test_s2_corps_vide_liste_les_cinq_champs": {
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0,
+      "xfailed": 0
+    },
+    "tests/test_api.py::test_s7_faute_de_frappe_detectee": {
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0,
+      "xfailed": 0
+    },
+    "tests/test_api.py::test_s9_validation_prioritaire_sur_disponibilite": {
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0,
+      "xfailed": 0
+    },
+    "tests/test_api.py::test_s10_corps_vide": {
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0,
+      "xfailed": 0
+    },
+    "tests/test_integration.py::test_requete_invalide_n_atteint_ni_pretraitement_ni_modele": {
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0,
+      "xfailed": 0
+    },
+    "tests/test_integration.py::test_variable_absente_bloquee_par_validation": {
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0,
+      "xfailed": 0
+    },
+    "tests/test_integration.py::test_variable_absente_bloquee_par_le_pipeline_sans_validation": {
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0,
+      "xfailed": 0
+    },
+    "tests/test_preprocessing.py::test_variable_absente": {
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0,
+      "xfailed": 0
+    },
+    "tests/test_robustness.py::test_valeur_nulle": {
+      "passed": 5,
+      "failed": 0,
+      "skipped": 0,
+      "xfailed": 0
+    },
+    "tests/test_robustness.py::test_toutes_les_valeurs_nulles": {
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0,
+      "xfailed": 0
+    },
+    "tests/test_validation.py::test_champ_manquant": {
+      "passed": 5,
+      "failed": 0,
+      "skipped": 0,
+      "xfailed": 0
+    },
+    "tests/test_validation.py::test_demande_vide_liste_tous_les_champs": {
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0,
+      "xfailed": 0
+    },
+    "tests/test_validation.py::test_formatage_erreurs_en_francais_sans_valeur_saisie": {
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0,
+      "xfailed": 0
+    }
+  },
+  "EX01": {
+    "tests/test_api.py::test_s3_age_negatif": {
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0,
+      "xfailed": 0
+    },
+    "tests/test_api.py::test_s3_age_juste_hors_limites": {
+      "passed": 2,
+      "failed": 0,
+      "skipped": 0,
+      "xfailed": 0
+    },
+    "tests/test_api.py::test_s8_valeurs_extremement_elevees": {
+      "passed": 7,
+      "failed": 0,
+      "skipped": 0,
+      "xfailed": 0
+    },
+    "tests/test_robustness.py::test_valeurs_aux_limites": {
+      "passed": 20,
+      "failed": 0,
+      "skipped": 0,
+      "xfailed": 0
+    },
+    "tests/test_validation.py::test_bornes_age": {
+      "passed": 9,
+      "failed": 0,
+      "skipped": 0,
+      "xfailed": 0
+    },
+    "tests/test_validation.py::test_coherence_non_evaluee_si_age_invalide": {
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0,
+      "xfailed": 0
+    },
+    "tests/test_validation.py::test_age_non_entier_refuse": {
+      "passed": 5,
+      "failed": 0,
+      "skipped": 0,
+      "xfailed": 0
+    }
+  },
+  "EX02": {
+    "tests/test_api.py::test_s4_revenu_texte": {
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0,
+      "xfailed": 0
+    },
+    "tests/test_api.py::test_s8_valeurs_extremement_elevees": {
+      "passed": 7,
+      "failed": 0,
+      "skipped": 0,
+      "xfailed": 0
+    },
+    "tests/test_preprocessing.py::test_defense_en_profondeur_valeurs_non_positives": {
+      "passed": 6,
+      "failed": 0,
+      "skipped": 0,
+      "xfailed": 0
+    },
+    "tests/test_robustness.py::test_valeurs_aux_limites": {
+      "passed": 20,
+      "failed": 0,
+      "skipped": 0,
+      "xfailed": 0
+    },
+    "tests/test_validation.py::test_bornes_revenu": {
+      "passed": 7,
+      "failed": 0,
+      "skipped": 0,
+      "xfailed": 0
+    },
+    "tests/test_validation.py::test_revenu_non_numerique_refuse": {
+      "passed": 6,
+      "failed": 0,
+      "skipped": 0,
+      "xfailed": 0
+    },
+    "tests/test_validation.py::test_revenu_entier_accepte_comme_nombre": {
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0,
+      "xfailed": 0
+    }
+  },
+  "EX11": {
+    "tests/test_api.py::test_s4_revenu_texte": {
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0,
+      "xfailed": 0
+    },
+    "tests/test_preprocessing.py::test_valeur_non_numerique_ou_non_finie": {
+      "passed": 4,
+      "failed": 0,
+      "skipped": 0,
+      "xfailed": 0
+    },
+    "tests/test_preprocessing.py::test_depassement_numerique_detecte": {
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0,
+      "xfailed": 0
+    },
+    "tests/test_robustness.py::test_valeur_nulle": {
+      "passed": 5,
+      "failed": 0,
+      "skipped": 0,
+      "xfailed": 0
+    },
+    "tests/test_robustness.py::test_valeur_non_numerique": {
+      "passed": 45,
+      "failed": 0,
+      "skipped": 0,
+      "xfailed": 0
+    },
+    "tests/test_robustness.py::test_valeur_non_finie": {
+      "passed": 25,
+      "failed": 0,
+      "skipped": 0,
+      "xfailed": 0
+    },
+    "tests/test_validation.py::test_revenu_non_numerique_refuse": {
+      "passed": 6,
+      "failed": 0,
+      "skipped": 0,
+      "xfailed": 0
+    },
+    "tests/test_validation.py::test_age_non_entier_refuse": {
+      "passed": 5,
+      "failed": 0,
+      "skipped": 0,
+      "xfailed": 0
+    },
+    "tests/test_validation.py::test_valeurs_non_finies_refusees": {
+      "passed": 9,
+      "failed": 0,
+      "skipped": 0,
+      "xfailed": 0
+    }
+  },
+  "EX08": {
+    "tests/test_api.py::test_s5_montant_nul_ou_negatif": {
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0,
+      "xfailed": 0
+    },
+    "tests/test_api.py::test_s8_valeurs_extremement_elevees": {
+      "passed": 7,
+      "failed": 0,
+      "skipped": 0,
+      "xfailed": 0
+    },
+    "tests/test_preprocessing.py::test_defense_en_profondeur_valeurs_non_positives": {
+      "passed": 6,
+      "failed": 0,
+      "skipped": 0,
+      "xfailed": 0
+    },
+    "tests/test_robustness.py::test_valeurs_aux_limites": {
+      "passed": 20,
+      "failed": 0,
+      "skipped": 0,
+      "xfailed": 0
+    },
+    "tests/test_validation.py::test_bornes_montant": {
+      "passed": 6,
+      "failed": 0,
+      "skipped": 0,
+      "xfailed": 0
+    }
+  },
+  "EX03": {
+    "tests/test_api.py::test_s6_duree_non_entiere": {
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0,
+      "xfailed": 0
+    },
+    "tests/test_api.py::test_s8_valeurs_extremement_elevees": {
+      "passed": 7,
+      "failed": 0,
+      "skipped": 0,
+      "xfailed": 0
+    },
+    "tests/test_preprocessing.py::test_defense_en_profondeur_valeurs_non_positives": {
+      "passed": 6,
+      "failed": 0,
+      "skipped": 0,
+      "xfailed": 0
+    },
+    "tests/test_robustness.py::test_valeurs_aux_limites": {
+      "passed": 20,
+      "failed": 0,
+      "skipped": 0,
+      "xfailed": 0
+    },
+    "tests/test_validation.py::test_bornes_duree": {
+      "passed": 6,
+      "failed": 0,
+      "skipped": 0,
+      "xfailed": 0
+    },
+    "tests/test_validation.py::test_duree_non_entiere_rejetee": {
+      "passed": 4,
+      "failed": 0,
+      "skipped": 0,
+      "xfailed": 0
+    }
+  },
+  "EX10": {
+    "tests/test_api.py::test_s7_champs_supplementaires": {
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0,
+      "xfailed": 0
+    },
+    "tests/test_api.py::test_s7_faute_de_frappe_detectee": {
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0,
+      "xfailed": 0
+    },
+    "tests/test_robustness.py::test_schema_incorrect": {
+      "passed": 5,
+      "failed": 0,
+      "skipped": 0,
+      "xfailed": 0
+    },
+    "tests/test_validation.py::test_champ_supplementaire_refuse": {
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0,
+      "xfailed": 0
+    }
+  },
+  "EX09": {
+    "tests/test_api.py::test_s8_valeurs_extremement_elevees": {
+      "passed": 7,
+      "failed": 0,
+      "skipped": 0,
+      "xfailed": 0
+    },
+    "tests/test_donnees.py::test_toutes_les_lignes_respectent_le_contrat_d_entree": {
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0,
+      "xfailed": 0
+    },
+    "tests/test_robustness.py::test_valeurs_aux_limites": {
+      "passed": 20,
+      "failed": 0,
+      "skipped": 0,
+      "xfailed": 0
+    },
+    "tests/test_robustness.py::test_limite_anciennete_a_75_ans": {
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0,
+      "xfailed": 0
+    },
+    "tests/test_validation.py::test_coherence_anciennete_age": {
+      "passed": 8,
+      "failed": 0,
+      "skipped": 0,
+      "xfailed": 0
+    },
+    "tests/test_validation.py::test_incoherence_anciennete_a_un_type_dedie": {
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0,
+      "xfailed": 0
+    },
+    "tests/test_validation.py::test_coherence_non_evaluee_si_age_invalide": {
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0,
+      "xfailed": 0
+    }
+  },
+  "EX13": {
+    "tests/test_api.py::test_s9_predict_modele_indisponible": {
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0,
+      "xfailed": 0
+    },
+    "tests/test_api.py::test_s10_json_invalide": {
+      "passed": 4,
+      "failed": 0,
+      "skipped": 0,
+      "xfailed": 0
+    },
+    "tests/test_api.py::test_route_inconnue": {
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0,
+      "xfailed": 0
+    },
+    "tests/test_api.py::test_identifiant_de_requete": {
+      "passed": 4,
+      "failed": 0,
+      "skipped": 0,
+      "xfailed": 0
+    },
+    "tests/test_integration.py::test_modele_non_chargeable": {
+      "passed": 10,
+      "failed": 0,
+      "skipped": 0,
+      "xfailed": 0
+    },
+    "tests/test_integration.py::test_erreur_de_pretraitement": {
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0,
+      "xfailed": 0
+    },
+    "tests/test_integration.py::test_dimensions_produites_incompatibles": {
+      "passed": 5,
+      "failed": 0,
+      "skipped": 0,
+      "xfailed": 0
+    },
+    "tests/test_integration.py::test_exception_pendant_la_prediction": {
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0,
+      "xfailed": 0
+    },
+    "tests/test_integration.py::test_sortie_du_modele_non_conforme": {
+      "passed": 6,
+      "failed": 0,
+      "skipped": 0,
+      "xfailed": 0
+    },
+    "tests/test_integration.py::test_erreur_inattendue_dans_l_orchestration": {
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0,
+      "xfailed": 0
+    },
+    "tests/test_integration.py::test_filet_de_securite_erreur_non_geree": {
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0,
+      "xfailed": 0
+    },
+    "tests/test_robustness.py::test_propriete_aucune_entree_ne_provoque_d_erreur_500": {
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0,
+      "xfailed": 0
+    },
+    "tests/test_validation.py::test_formatage_erreurs_en_francais_sans_valeur_saisie": {
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0,
+      "xfailed": 0
+    },
+    "tests/test_validation.py::test_formatage_erreur_inconnue_et_contexte_incomplet": {
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0,
+      "xfailed": 0
+    }
+  },
+  "EX16": {
+    "tests/test_api.py::test_s9_model_info_indisponible": {
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0,
+      "xfailed": 0
+    },
+    "tests/test_api.py::test_model_info": {
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0,
+      "xfailed": 0
+    },
+    "tests/test_integration.py::test_scenario_principal_bout_en_bout": {
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0,
+      "xfailed": 0
+    },
+    "tests/test_integration.py::test_filet_de_securite_erreur_non_geree": {
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0,
+      "xfailed": 0
+    },
+    "tests/test_regression.py::test_metriques_recalculees_egales_aux_metadonnees": {
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0,
+      "xfailed": 0
+    }
+  },
+  "EX12": {
+    "tests/test_api.py::test_s10_json_invalide": {
+      "passed": 4,
+      "failed": 0,
+      "skipped": 0,
+      "xfailed": 0
+    },
+    "tests/test_api.py::test_s10_corps_qui_n_est_pas_un_objet": {
+      "passed": 4,
+      "failed": 0,
+      "skipped": 0,
+      "xfailed": 0
+    },
+    "tests/test_api.py::test_s10_corps_vide": {
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0,
+      "xfailed": 0
+    },
+    "tests/test_api.py::test_s10_corps_trop_volumineux": {
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0,
+      "xfailed": 0
+    },
+    "tests/test_api.py::test_s10_content_type_non_json": {
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0,
+      "xfailed": 0
+    },
+    "tests/test_api.py::test_route_inconnue": {
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0,
+      "xfailed": 0
+    },
+    "tests/test_api.py::test_methode_non_autorisee": {
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0,
+      "xfailed": 0
+    },
+    "tests/test_robustness.py::test_schema_incorrect": {
+      "passed": 5,
+      "failed": 0,
+      "skipped": 0,
+      "xfailed": 0
+    },
+    "tests/test_robustness.py::test_cles_dupliquees_derniere_valeur_validee": {
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0,
+      "xfailed": 0
+    },
+    "tests/test_robustness.py::test_chaine_tres_longue": {
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0,
+      "xfailed": 0
+    },
+    "tests/test_robustness.py::test_propriete_aucune_entree_ne_provoque_d_erreur_500": {
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0,
+      "xfailed": 0
+    }
+  },
+  "EX14": {
+    "tests/test_donnees.py::test_generation_deterministe": {
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0,
+      "xfailed": 0
+    },
+    "tests/test_donnees.py::test_donnees_versionnees_regenerables": {
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0,
+      "xfailed": 0
+    },
+    "tests/test_donnees.py::test_separation_stratifiee": {
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0,
+      "xfailed": 0
+    },
+    "tests/test_donnees.py::test_reference_regenerable_a_l_identique": {
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0,
+      "xfailed": 0
+    },
+    "tests/test_preprocessing.py::test_meme_transformation_entrainement_et_production": {
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0,
+      "xfailed": 0
+    },
+    "tests/test_regression.py::test_profils_de_reference_dans_les_tolerances": {
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0,
+      "xfailed": 0
+    },
+    "tests/test_regression.py::test_metriques_recalculees_egales_aux_metadonnees": {
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0,
+      "xfailed": 0
+    },
+    "tests/test_regression.py::test_coherence_apres_sauvegarde_et_rechargement": {
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0,
+      "xfailed": 0
+    },
+    "tests/test_regression.py::test_reentrainement_reproductible": {
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0,
+      "xfailed": 0
+    },
+    "tests/test_robustness.py::test_invariance_a_l_ordre_des_champs": {
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0,
+      "xfailed": 0
+    },
+    "tests/test_robustness.py::test_entier_et_decimal_equivalents": {
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0,
+      "xfailed": 0
+    },
+    "tests/test_robustness.py::test_meme_entree_meme_sortie": {
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0,
+      "xfailed": 0
+    },
+    "tests/test_robustness.py::test_predictions_concurrentes_identiques": {
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0,
+      "xfailed": 0
+    }
+  },
+  "EX07": {
+    "tests/test_donnees.py::test_reference_regenerable_a_l_identique": {
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0,
+      "xfailed": 0
+    },
+    "tests/test_regression.py::test_contrat_de_sortie_sur_les_profils_de_reference": {
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0,
+      "xfailed": 0
+    },
+    "tests/test_regression.py::test_profils_de_reference_dans_les_tolerances": {
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0,
+      "xfailed": 0
+    },
+    "tests/test_regression.py::test_artefact_de_reference_inchange": {
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0,
+      "xfailed": 0
+    },
+    "tests/test_regression.py::test_metriques_dans_les_tolerances": {
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0,
+      "xfailed": 0
+    },
+    "tests/test_regression.py::test_le_controle_detecte_une_degradation": {
+      "passed": 4,
+      "failed": 0,
+      "skipped": 0,
+      "xfailed": 0
+    },
+    "tests/test_regression.py::test_variation_dans_la_tolerance_acceptee": {
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0,
+      "xfailed": 0
+    },
+    "tests/test_regression.py::test_modele_degrade_reel_est_rejete": {
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0,
+      "xfailed": 0
+    },
+    "tests/test_regression.py::test_comparaison_de_predictions_detecte_un_ecart": {
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0,
+      "xfailed": 0
+    },
+    "tests/test_regression.py::test_taux_de_faux_negatifs_par_segment": {
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0,
+      "xfailed": 0
+    },
+    "tests/test_regression.py::test_comparaison_du_candidat_v1_1_0": {
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0,
+      "xfailed": 0
+    }
+  },
+  "EX21": {
+    "tests/test_echec_volontaire.py::test_echec_volontaire": {
+      "passed": 0,
+      "failed": 0,
+      "skipped": 1,
+      "xfailed": 0
+    },
+    "tests/test_tracabilite.py::test_chaque_exigence_est_couverte_par_au_moins_un_test": {
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0,
+      "xfailed": 0
+    },
+    "tests/test_tracabilite.py::test_workflow_ci_execute_lint_tests_et_couverture": {
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0,
+      "xfailed": 0
+    },
+    "tests/test_tracabilite.py::test_dependances_epinglees": {
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0,
+      "xfailed": 0
+    }
+  },
+  "EX22": {
+    "tests/test_integration.py::test_scenario_principal_bout_en_bout": {
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0,
+      "xfailed": 0
+    },
+    "tests/test_integration.py::test_variable_absente_bloquee_par_validation": {
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0,
+      "xfailed": 0
+    },
+    "tests/test_integration.py::test_variable_absente_bloquee_par_le_pipeline_sans_validation": {
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0,
+      "xfailed": 0
+    },
+    "tests/test_integration.py::test_dimensions_produites_incompatibles": {
+      "passed": 5,
+      "failed": 0,
+      "skipped": 0,
+      "xfailed": 0
+    },
+    "tests/test_integration.py::test_predire_lot_refuse_une_matrice_vide": {
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0,
+      "xfailed": 0
+    },
+    "tests/test_preprocessing.py::test_transformation_valeurs_attendues": {
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0,
+      "xfailed": 0
+    },
+    "tests/test_preprocessing.py::test_taux_endettement_pour_des_durees_differentes_de_12": {
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0,
+      "xfailed": 0
+    },
+    "tests/test_preprocessing.py::test_ordre_des_variables_fait_partie_du_contrat": {
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0,
+      "xfailed": 0
+    },
+    "tests/test_preprocessing.py::test_meme_transformation_entrainement_et_production": {
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0,
+      "xfailed": 0
+    },
+    "tests/test_preprocessing.py::test_variable_absente": {
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0,
+      "xfailed": 0
+    },
+    "tests/test_preprocessing.py::test_valeur_non_numerique_ou_non_finie": {
+      "passed": 4,
+      "failed": 0,
+      "skipped": 0,
+      "xfailed": 0
+    },
+    "tests/test_preprocessing.py::test_depassement_numerique_detecte": {
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0,
+      "xfailed": 0
+    },
+    "tests/test_preprocessing.py::test_colonnes_de_longueurs_differentes": {
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0,
+      "xfailed": 0
+    }
+  },
+  "EX17": {
+    "tests/test_integration.py::test_modele_non_chargeable": {
+      "passed": 10,
+      "failed": 0,
+      "skipped": 0,
+      "xfailed": 0
+    },
+    "tests/test_regression.py::test_artefact_de_reference_inchange": {
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0,
+      "xfailed": 0
+    },
+    "tests/test_regression.py::test_coherence_apres_sauvegarde_et_rechargement": {
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0,
+      "xfailed": 0
+    }
+  },
+  "EX19": {
+    "tests/test_performance.py::test_latence_inference_p95": {
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0,
+      "xfailed": 0
+    },
+    "tests/test_performance.py::test_latence_api_p95_sequentielle": {
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0,
+      "xfailed": 0
+    }
+  },
+  "EX18": {
+    "tests/test_robustness.py::test_monotonie_metier": {
+      "passed": 9,
+      "failed": 0,
+      "skipped": 0,
+      "xfailed": 0
+    },
+    "tests/test_robustness.py::test_invariance_a_l_ordre_des_champs": {
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0,
+      "xfailed": 0
+    },
+    "tests/test_robustness.py::test_entier_et_decimal_equivalents": {
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0,
+      "xfailed": 0
+    }
+  }
+}

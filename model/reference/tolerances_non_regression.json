@@ -1,0 +1,31 @@
+{
+  "version_politique": "1.0",
+  "date_definition": "2026-11-22",
+  "statut": "Définie et versionnée AVANT toute comparaison avec une version candidate.",
+  "justification": {
+    "metriques": "Sur 1 500 observations de test (200 défauts), un écart de rappel de 0,03 correspond à 6 défauts : en deçà, la variation est compatible avec le bruit d'échantillonnage ; au-delà, elle doit être expliquée. Les planchers traduisent le minimum acceptable pour un usage d'aide à la décision.",
+    "meme_modele": "Une modification du code sans changement d'artefact ne doit pas modifier les probabilités au-delà des erreurs d'arrondi flottant.",
+    "sauvegarde_rechargement": "La sérialisation joblib doit être exacte : toute différence révèle un problème de version ou de sérialisation.",
+    "nouveau_modele": "Un nouveau modèle peut déplacer les probabilités ; au-delà de ces écarts, une investigation métier est obligatoire avant déploiement."
+  },
+  "metriques": {
+    "rappel": {"baisse_max_absolue": 0.03, "plancher": 0.75},
+    "f1": {"baisse_max_absolue": 0.03, "plancher": 0.30},
+    "roc_auc": {"baisse_max_absolue": 0.02, "plancher": 0.70},
+    "brier": {"hausse_max_absolue": 0.01}
+  },
+  "predictions": {
+    "meme_modele_tolerance_absolue": 1e-06,
+    "sauvegarde_rechargement_tolerance_absolue": 1e-12,
+    "nouveau_modele": {
+      "ecart_moyen_max": 0.05,
+      "ecart_max": 0.20,
+      "taux_changement_niveau_max": 0.20
+    }
+  },
+  "segments": {
+    "taux_faux_negatifs_max": 0.35,
+    "effectif_defauts_min": 15,
+    "commentaire": "Contrôle d'équité opérationnelle : aucun segment (tranche d'âge, tercile de revenu) ne doit présenter un taux de faux négatifs supérieur à 35 % dès lors qu'il compte au moins 15 défauts."
+  }
+}

@@ -1,0 +1,23 @@
+[1m============================= test session starts ==============================[0m
+platform darwin -- Python 3.13.5, pytest-9.2.0, pluggy-1.7.0
+rootdir: /Users/apple/Documents/cours M2/Test logiciel/Test_2/CreditRisk-Test
+configfile: pyproject.toml
+plugins: cov-7.1.0, locust-2.47.0, hypothesis-6.170.17, anyio-4.16.0
+collected 1 item
+
+tests/test_echec_volontaire.py [31mF[0m[31m                                         [100%][0m
+
+=================================== FAILURES ===================================
+[31m[1m____________________________ test_echec_volontaire _____________________________[0m
+
+    [0m[37m@pytest[39;49;00m.mark.exigence([33m"[39;49;00m[33mEX21[39;49;00m[33m"[39;49;00m)[90m[39;49;00m
+    [37m@pytest[39;49;00m.mark.skipif(os.environ.get([33m"[39;49;00m[33mFORCER_ECHEC[39;49;00m[33m"[39;49;00m) != [33m"[39;49;00m[33m1[39;49;00m[33m"[39;49;00m, reason=[33m"[39;49;00m[33mactivé par FORCER_ECHEC=1[39;49;00m[33m"[39;49;00m)[90m[39;49;00m
+    [94mdef[39;49;00m[90m [39;49;00m[92mtest_echec_volontaire[39;49;00m():[90m[39;49;00m
+>       pytest.fail([33m"[39;49;00m[33mÉchec volontaire : le workflow doit apparaître en rouge[39;49;00m[33m"[39;49;00m)[90m[39;49;00m
+[1m[31mE       Failed: Échec volontaire : le workflow doit apparaître en rouge[0m
+
+[1m[31mtests/test_echec_volontaire.py[0m:17: Failed
+[36m[1m=========================== short test summary info ============================[0m
+[31mFAILED[0m tests/test_echec_volontaire.py::[1mtest_echec_volontaire[0m - Failed: Échec volontaire : le workflow doit apparaître en rouge
+[31m============================== [31m[1m1 failed[0m[31m in 0.04s[0m[31m ===============================[0m
+Code de sortie : 1

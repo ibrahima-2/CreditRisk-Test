@@ -1,0 +1,70 @@
+..........................................................s............. [ 21%]
+..................F......................Fs..........s.................. [ 43%]
+........................................................................ [ 64%]
+........................................................................ [ 86%]
+.............................................                            [100%]
+=================================== FAILURES ===================================
+__________________________ test_latence_inference_p95 __________________________
+
+service_modele = <app.prediction.ServiceModele object at 0x10a2007d0>
+demande_valide = {'age': 35, 'revenu_mensuel': 250000, 'montant_credit': 1000000, 'duree_mois': 12, ...}
+
+    @pytest.mark.performance
+    @pytest.mark.exigence("EX19")
+    def test_latence_inference_p95(service_modele, demande_valide):
+        matrice = preprocessing.transformer(demande_valide)
+        for _ in range(20):  # préchauffage
+            service_modele.predire_probabilite(matrice)
+        durees = []
+        for _ in range(500):
+            debut = time.perf_counter()
+            service_modele.predire_probabilite(matrice)
+            durees.append(time.perf_counter() - debut)
+>       assert p95(durees) <= OBJECTIF_INFERENCE_P95_MS
+E       assert 14.676502404472554 <= 10.0
+E        +  where 14.676502404472554 = p95([0.014418916995055042, 0.008696834003785625, 0.006331666998448782, 0.006552165999892168, 0.006559500005096197, 0.004317625003750436, ...])
+
+tests/test_performance.py:36: AssertionError
+________________ test_profils_de_reference_dans_les_tolerances _________________
+
+service_modele = <app.prediction.ServiceModele object at 0x10a2007d0>
+reference = {'version_reference': '1.0.0', 'sha256_modele': 'a2d685705fa03129e9a46406b57170245f8059e3cae45a101f5416515308ef59', 'date_gel': '2026-11-22T15:11:17+00:00', 'seuils': {'risque_modere': 0.09, 'risque_eleve': 0.21}, ...}
+tolerances = {'version_politique': '1.0', 'date_definition': '2026-11-22', 'statut': 'Définie et versionnée AVANT toute comparaison... déplacer les probabilités ; au-delà de ces écarts, une investigation métier est obligatoire avant déploiement.'}, ...}
+
+    @pytest.mark.exigence("EX07", "EX14")
+    def test_profils_de_reference_dans_les_tolerances(service_modele, reference, tolerances):
+        resultats = [service_modele.evaluer(p["entree"]) for p in reference["profils"]]
+        p_ref = np.array([p["probabilite_defaut"] for p in reference["profils"]])
+        p_cour = np.array([r.probabilite_defaut for r in resultats])
+    
+        if meme_artefact(service_modele, reference):
+            tolerance = tolerances["predictions"]["meme_modele_tolerance_absolue"]
+            ecarts = np.abs(p_cour - p_ref)
+            fautifs = [
+                p["id"] for p, e in zip(reference["profils"], ecarts, strict=True) if e > tolerance
+            ]
+            assert not fautifs, f"Écart max {ecarts.max():.2e} > {tolerance} sur {fautifs}"
+            for profil, resultat in zip(reference["profils"], resultats, strict=True):
+                assert resultat.niveau_risque == profil["niveau_risque"], profil["id"]
+                assert resultat.alertes == profil["alertes"], profil["id"]
+        else:
+            rapport = comparer_predictions(
+                p_ref,
+                p_cour,
+                [p["niveau_risque"] for p in reference["profils"]],
+                [r.niveau_risque for r in resultats],
+                tolerances,
+            )
+>           assert rapport.conforme, f"Écarts hors tolérance : {rapport.non_conformites}"
+E           AssertionError: Écarts hors tolérance : ['ecart_moyen_probabilite', 'ecart_max_probabilite']
+E           assert False
+E            +  where False = RapportComparaison(controles=[Controle(critere='ecart_moyen_probabilite', reference=None, candidat=0.05962801834727907...x_changement_niveau_risque', reference=None, candidat=0.16666666666666666, limite=0.2, conforme=True, regle='<= 0.2')]).conforme
+
+tests/test_regression.py:103: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_performance.py::test_latence_inference_p95 - assert 14.6765...
+FAILED tests/test_regression.py::test_profils_de_reference_dans_les_tolerances
+SKIPPED [1] tests/test_echec_volontaire.py:14: activé par FORCER_ECHEC=1
+SKIPPED [1] tests/test_regression.py:109: Version candidate déployée : comparaison par tolérances « nouveau modèle »
+SKIPPED [1] tests/test_regression.py:206: Le modèle déployé n'est pas la version de référence
+2 failed, 328 passed, 3 skipped in 18.03s

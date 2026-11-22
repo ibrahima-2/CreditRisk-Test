@@ -1,0 +1,49 @@
+============================= test session starts ==============================
+platform darwin -- Python 3.13.5, pytest-9.2.0, pluggy-1.7.0
+rootdir: /Users/apple/Documents/cours M2/Test logiciel/Test_2/CreditRisk-Test
+configfile: pyproject.toml
+testpaths: tests
+plugins: cov-7.1.0, locust-2.47.0, hypothesis-6.170.17, anyio-4.16.0
+collected 334 items
+
+tests/test_api.py .....................................................  [ 15%]
+tests/test_donnees.py .....                                              [ 17%]
+tests/test_echec_volontaire.py s                                         [ 17%]
+tests/test_integration.py ...............................                [ 26%]
+tests/test_performance.py ..                                             [ 27%]
+tests/test_preprocessing.py ....................                         [ 33%]
+tests/test_regression.py ................                                [ 38%]
+tests/test_robustness.py ............................................... [ 52%]
+........................................................................ [ 73%]
+..........                                                               [ 76%]
+tests/test_tracabilite.py ...                                            [ 77%]
+tests/test_validation.py ............................................... [ 91%]
+...........................                                              [100%]
+
+- generated xml file: /Users/apple/Documents/cours M2/Test logiciel/Test_2/CreditRisk-Test/reports/preuves/junit.xml -
+================================ tests coverage ================================
+_______________ coverage: platform darwin, python 3.13.5-final-0 _______________
+
+Name                   Stmts   Miss Branch BrPart  Cover   Missing
+------------------------------------------------------------------
+app/__init__.py            0      0      0      0   100%
+app/config.py             13      0      0      0   100%
+app/main.py              105      0      6      0   100%
+app/prediction.py        142      0     30      0   100%
+app/preprocessing.py      35      0     12      0   100%
+app/schemas.py            48      0      0      0   100%
+app/validation.py         37      0      4      0   100%
+ml/__init__.py             0      0      0      0   100%
+ml/comparaison.py         35      0      0      0   100%
+ml/donnees.py             55      0      4      0   100%
+ml/entrainement.py        56      1      0      0    98%   51
+ml/evaluation.py          67      0     10      0   100%
+ml/reference.py           28      0      4      0   100%
+------------------------------------------------------------------
+TOTAL                    621      1     70      0    99%
+Coverage HTML written to dir reports/preuves/htmlcov
+Coverage XML written to file reports/preuves/coverage.xml
+Required test coverage of 90% reached. Total coverage: 99.86%
+=========================== short test summary info ============================
+SKIPPED [1] tests/test_echec_volontaire.py:14: activé par FORCER_ECHEC=1
+======================== 333 passed, 1 skipped in 4.50s ========================

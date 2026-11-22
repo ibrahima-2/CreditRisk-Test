@@ -1,0 +1,489 @@
+{
+  "version_reference": "1.0.0",
+  "version_candidate": "1.1.0",
+  "algorithme_candidat": "HistGradientBoostingClassifier (contraintes de monotonie)",
+  "seuils_reference": {
+    "risque_modere": 0.09,
+    "risque_eleve": 0.21
+  },
+  "seuils_candidat": {
+    "risque_modere": 0.08,
+    "risque_eleve": 0.16
+  },
+  "metriques_reference": {
+    "roc_auc": 0.7762384615384615,
+    "rappel": 0.825,
+    "precision": 0.22602739726027396,
+    "f1": 0.3548387096774194,
+    "exactitude": 0.6,
+    "brier": 0.0993115941834512,
+    "taux_faux_negatifs": 0.175,
+    "seuil": 0.09,
+    "effectif": 1500,
+    "taux_defaut": 0.13333333333333333,
+    "matrice_confusion": {
+      "vn": 735,
+      "fp": 565,
+      "fn": 35,
+      "vp": 165
+    }
+  },
+  "metriques_candidat": {
+    "roc_auc": 0.7662076923076924,
+    "rappel": 0.805,
+    "precision": 0.21381142098273573,
+    "f1": 0.3378803777544596,
+    "exactitude": 0.5793333333333334,
+    "brier": 0.10102713647774404,
+    "taux_faux_negatifs": 0.195,
+    "seuil": 0.08,
+    "effectif": 1500,
+    "taux_defaut": 0.13333333333333333,
+    "matrice_confusion": {
+      "vn": 708,
+      "fp": 592,
+      "fn": 39,
+      "vp": 161
+    }
+  },
+  "controle_metriques": {
+    "conforme": true,
+    "controles": [
+      {
+        "critere": "rappel_baisse",
+        "reference": 0.825,
+        "candidat": 0.805,
+        "limite": 0.7949999999999999,
+        "conforme": true,
+        "regle": ">= référence - 0.03"
+      },
+      {
+        "critere": "rappel_plancher",
+        "reference": null,
+        "candidat": 0.805,
+        "limite": 0.75,
+        "conforme": true,
+        "regle": ">= 0.75 (plancher métier)"
+      },
+      {
+        "critere": "f1_baisse",
+        "reference": 0.3548387096774194,
+        "candidat": 0.3378803777544596,
+        "limite": 0.32483870967741935,
+        "conforme": true,
+        "regle": ">= référence - 0.03"
+      },
+      {
+        "critere": "f1_plancher",
+        "reference": null,
+        "candidat": 0.3378803777544596,
+        "limite": 0.3,
+        "conforme": true,
+        "regle": ">= 0.3 (plancher métier)"
+      },
+      {
+        "critere": "roc_auc_baisse",
+        "reference": 0.7762384615384615,
+        "candidat": 0.7662076923076924,
+        "limite": 0.7562384615384615,
+        "conforme": true,
+        "regle": ">= référence - 0.02"
+      },
+      {
+        "critere": "roc_auc_plancher",
+        "reference": null,
+        "candidat": 0.7662076923076924,
+        "limite": 0.7,
+        "conforme": true,
+        "regle": ">= 0.7 (plancher métier)"
+      },
+      {
+        "critere": "brier_hausse",
+        "reference": 0.0993115941834512,
+        "candidat": 0.10102713647774404,
+        "limite": 0.1093115941834512,
+        "conforme": true,
+        "regle": "<= référence + 0.01"
+      }
+    ]
+  },
+  "controle_profils_reference": {
+    "conforme": false,
+    "controles": [
+      {
+        "critere": "ecart_moyen_probabilite",
+        "reference": null,
+        "candidat": 0.05962801834727907,
+        "limite": 0.05,
+        "conforme": false,
+        "regle": "<= 0.05"
+      },
+      {
+        "critere": "ecart_max_probabilite",
+        "reference": null,
+        "candidat": 0.7597615401014497,
+        "limite": 0.2,
+        "conforme": false,
+        "regle": "<= 0.2"
+      },
+      {
+        "critere": "taux_changement_niveau_risque",
+        "reference": null,
+        "candidat": 0.16666666666666666,
+        "limite": 0.2,
+        "conforme": true,
+        "regle": "<= 0.2"
+      }
+    ]
+  },
+  "profils": [
+    {
+      "id": "G01",
+      "description": "Profil nominal (exemple de l'énoncé)",
+      "p_reference": 0.10938402190541781,
+      "p_candidat": 0.09972961851805233,
+      "niveau_reference": "MODERE",
+      "niveau_candidat": "MODERE"
+    },
+    {
+      "id": "G02",
+      "description": "Profil a priori peu risqué",
+      "p_reference": 0.000721215946192957,
+      "p_candidat": 8.578913971602862e-05,
+      "niveau_reference": "FAIBLE",
+      "niveau_candidat": "FAIBLE"
+    },
+    {
+      "id": "G03",
+      "description": "Jeune, faible revenu, endettement très élevé",
+      "p_reference": 0.9999683170750303,
+      "p_candidat": 0.9512678090465337,
+      "niveau_reference": "ELEVE",
+      "niveau_candidat": "ELEVE"
+    },
+    {
+      "id": "G04",
+      "description": "Borne basse : 18 ans, ancienneté nulle",
+      "p_reference": 0.6934212719788206,
+      "p_candidat": 0.8923222247294119,
+      "niveau_reference": "ELEVE",
+      "niveau_candidat": "ELEVE"
+    },
+    {
+      "id": "G05",
+      "description": "Borne haute : 75 ans, ancienneté 60 ans (hors domaine)",
+      "p_reference": 3.702117820882746e-06,
+      "p_candidat": 0.00010925812914006373,
+      "niveau_reference": "FAIBLE",
+      "niveau_candidat": "FAIBLE"
+    },
+    {
+      "id": "G06",
+      "description": "Durée minimale (1 mois)",
+      "p_reference": 0.17222112800509043,
+      "p_candidat": 0.11355692328890757,
+      "niveau_reference": "MODERE",
+      "niveau_candidat": "MODERE"
+    },
+    {
+      "id": "G07",
+      "description": "Durée maximale (120 mois, hors domaine)",
+      "p_reference": 0.10852522321551092,
+      "p_candidat": 0.008098841127543072,
+      "niveau_reference": "MODERE",
+      "niveau_candidat": "FAIBLE"
+    },
+    {
+      "id": "G08",
+      "description": "Revenu très élevé mais valide (hors domaine)",
+      "p_reference": 8.291718416827719e-05,
+      "p_candidat": 0.0012819884328663126,
+      "niveau_reference": "FAIBLE",
+      "niveau_candidat": "FAIBLE"
+    },
+    {
+      "id": "G09",
+      "description": "Montant très élevé mais valide (hors domaine)",
+      "p_reference": 0.9999979081284124,
+      "p_candidat": 0.24023636802696272,
+      "niveau_reference": "ELEVE",
+      "niveau_candidat": "ELEVE"
+    },
+    {
+      "id": "G10",
+      "description": "Revenu très faible (hors domaine)",
+      "p_reference": 0.9999999999892031,
+      "p_candidat": 0.9576941813511183,
+      "niveau_reference": "ELEVE",
+      "niveau_candidat": "ELEVE"
+    },
+    {
+      "id": "G11",
+      "description": "Mensualité égale au revenu (endettement 100 %)",
+      "p_reference": 0.949320635322173,
+      "p_candidat": 0.9174134521736523,
+      "niveau_reference": "ELEVE",
+      "niveau_candidat": "ELEVE"
+    },
+    {
+      "id": "G12",
+      "description": "Artisan expérimenté, demande modérée",
+      "p_reference": 0.04452404790942994,
+      "p_candidat": 0.03101358120234519,
+      "niveau_reference": "FAIBLE",
+      "niveau_candidat": "FAIBLE"
+    },
+    {
+      "id": "T01",
+      "description": "Ligne 1 du jeu de test",
+      "p_reference": 0.2322172524789401,
+      "p_candidat": 0.25453297812960546,
+      "niveau_reference": "ELEVE",
+      "niveau_candidat": "ELEVE"
+    },
+    {
+      "id": "T02",
+      "description": "Ligne 2 du jeu de test",
+      "p_reference": 0.3580339170762572,
+      "p_candidat": 0.2852006765066553,
+      "niveau_reference": "ELEVE",
+      "niveau_candidat": "ELEVE"
+    },
+    {
+      "id": "T03",
+      "description": "Ligne 3 du jeu de test",
+      "p_reference": 0.27741977873581325,
+      "p_candidat": 0.2671584224645939,
+      "niveau_reference": "ELEVE",
+      "niveau_candidat": "ELEVE"
+    },
+    {
+      "id": "T04",
+      "description": "Ligne 4 du jeu de test",
+      "p_reference": 0.0087030963975906,
+      "p_candidat": 0.0002775347092157648,
+      "niveau_reference": "FAIBLE",
+      "niveau_candidat": "FAIBLE"
+    },
+    {
+      "id": "T05",
+      "description": "Ligne 5 du jeu de test",
+      "p_reference": 0.04542575716494844,
+      "p_candidat": 0.0301992110557236,
+      "niveau_reference": "FAIBLE",
+      "niveau_candidat": "FAIBLE"
+    },
+    {
+      "id": "T06",
+      "description": "Ligne 6 du jeu de test",
+      "p_reference": 0.01573522404552673,
+      "p_candidat": 0.009522376651562378,
+      "niveau_reference": "FAIBLE",
+      "niveau_candidat": "FAIBLE"
+    },
+    {
+      "id": "T07",
+      "description": "Ligne 7 du jeu de test",
+      "p_reference": 0.16619889830717785,
+      "p_candidat": 0.1752808350146064,
+      "niveau_reference": "MODERE",
+      "niveau_candidat": "ELEVE"
+    },
+    {
+      "id": "T08",
+      "description": "Ligne 8 du jeu de test",
+      "p_reference": 0.3791664764350142,
+      "p_candidat": 0.499652712975818,
+      "niveau_reference": "ELEVE",
+      "niveau_candidat": "ELEVE"
+    },
+    {
+      "id": "T09",
+      "description": "Ligne 9 du jeu de test",
+      "p_reference": 0.3624342214170234,
+      "p_candidat": 0.30216486803864656,
+      "niveau_reference": "ELEVE",
+      "niveau_candidat": "ELEVE"
+    },
+    {
+      "id": "T10",
+      "description": "Ligne 10 du jeu de test",
+      "p_reference": 0.03439077630490632,
+      "p_candidat": 0.03228044641662361,
+      "niveau_reference": "FAIBLE",
+      "niveau_candidat": "FAIBLE"
+    },
+    {
+      "id": "T11",
+      "description": "Ligne 11 du jeu de test",
+      "p_reference": 0.03445487483597559,
+      "p_candidat": 0.01161965918336805,
+      "niveau_reference": "FAIBLE",
+      "niveau_candidat": "FAIBLE"
+    },
+    {
+      "id": "T12",
+      "description": "Ligne 12 du jeu de test",
+      "p_reference": 0.06575712063304893,
+      "p_candidat": 0.08124137753135763,
+      "niveau_reference": "FAIBLE",
+      "niveau_candidat": "MODERE"
+    },
+    {
+      "id": "T13",
+      "description": "Ligne 13 du jeu de test",
+      "p_reference": 0.01496544535487851,
+      "p_candidat": 0.017734094151585264,
+      "niveau_reference": "FAIBLE",
+      "niveau_candidat": "FAIBLE"
+    },
+    {
+      "id": "T14",
+      "description": "Ligne 14 du jeu de test",
+      "p_reference": 0.1798966801826309,
+      "p_candidat": 0.19350126936834802,
+      "niveau_reference": "MODERE",
+      "niveau_candidat": "ELEVE"
+    },
+    {
+      "id": "T15",
+      "description": "Ligne 15 du jeu de test",
+      "p_reference": 0.052447592534574615,
+      "p_candidat": 0.017688835233653437,
+      "niveau_reference": "FAIBLE",
+      "niveau_candidat": "FAIBLE"
+    },
+    {
+      "id": "T16",
+      "description": "Ligne 16 du jeu de test",
+      "p_reference": 0.06086879537582148,
+      "p_candidat": 0.047889058209324875,
+      "niveau_reference": "FAIBLE",
+      "niveau_candidat": "FAIBLE"
+    },
+    {
+      "id": "T17",
+      "description": "Ligne 17 du jeu de test",
+      "p_reference": 0.10927069898523441,
+      "p_candidat": 0.10281019021390195,
+      "niveau_reference": "MODERE",
+      "niveau_candidat": "MODERE"
+    },
+    {
+      "id": "T18",
+      "description": "Ligne 18 du jeu de test",
+      "p_reference": 0.17686437205021138,
+      "p_candidat": 0.26381856086631267,
+      "niveau_reference": "MODERE",
+      "niveau_candidat": "ELEVE"
+    }
+  ],
+  "ecarts_jeu_de_test": {
+    "moyen": 0.030061890486159672,
+    "p95": 0.11379196922275703,
+    "max": 0.37418617952645244
+  },
+  "ecart_sauvegarde_rechargement": 0.0,
+  "segments_reference": {
+    "age_18_25": {
+      "effectif": 176,
+      "defauts": 44,
+      "faux_negatifs": 1,
+      "taux_faux_negatifs": 0.022727272727272728,
+      "taux_signalement": 0.8636363636363636
+    },
+    "age_26_40": {
+      "effectif": 708,
+      "defauts": 104,
+      "faux_negatifs": 16,
+      "taux_faux_negatifs": 0.15384615384615385,
+      "taux_signalement": 0.557909604519774
+    },
+    "age_41_55": {
+      "effectif": 564,
+      "defauts": 49,
+      "faux_negatifs": 16,
+      "taux_faux_negatifs": 0.32653061224489793,
+      "taux_signalement": 0.3120567375886525
+    },
+    "age_56_plus": {
+      "effectif": 52,
+      "defauts": 3,
+      "faux_negatifs": 2,
+      "taux_faux_negatifs": 0.6666666666666666,
+      "taux_signalement": 0.1346153846153846
+    },
+    "revenu_tercile_1": {
+      "effectif": 504,
+      "defauts": 92,
+      "faux_negatifs": 9,
+      "taux_faux_negatifs": 0.09782608695652174,
+      "taux_signalement": 0.7043650793650794
+    },
+    "revenu_tercile_2": {
+      "effectif": 497,
+      "defauts": 59,
+      "faux_negatifs": 11,
+      "taux_faux_negatifs": 0.1864406779661017,
+      "taux_signalement": 0.4607645875251509
+    },
+    "revenu_tercile_3": {
+      "effectif": 499,
+      "defauts": 49,
+      "faux_negatifs": 15,
+      "taux_faux_negatifs": 0.30612244897959184,
+      "taux_signalement": 0.2925851703406814
+    }
+  },
+  "segments_candidat": {
+    "age_18_25": {
+      "effectif": 176,
+      "defauts": 44,
+      "faux_negatifs": 2,
+      "taux_faux_negatifs": 0.045454545454545456,
+      "taux_signalement": 0.8465909090909091
+    },
+    "age_26_40": {
+      "effectif": 708,
+      "defauts": 104,
+      "faux_negatifs": 19,
+      "taux_faux_negatifs": 0.18269230769230768,
+      "taux_signalement": 0.5692090395480226
+    },
+    "age_41_55": {
+      "effectif": 564,
+      "defauts": 49,
+      "faux_negatifs": 16,
+      "taux_faux_negatifs": 0.32653061224489793,
+      "taux_signalement": 0.34397163120567376
+    },
+    "age_56_plus": {
+      "effectif": 52,
+      "defauts": 3,
+      "faux_negatifs": 2,
+      "taux_faux_negatifs": 0.6666666666666666,
+      "taux_signalement": 0.1346153846153846
+    },
+    "revenu_tercile_1": {
+      "effectif": 504,
+      "defauts": 92,
+      "faux_negatifs": 11,
+      "taux_faux_negatifs": 0.11956521739130435,
+      "taux_signalement": 0.6984126984126984
+    },
+    "revenu_tercile_2": {
+      "effectif": 497,
+      "defauts": 59,
+      "faux_negatifs": 12,
+      "taux_faux_negatifs": 0.2033898305084746,
+      "taux_signalement": 0.4909456740442656
+    },
+    "revenu_tercile_3": {
+      "effectif": 499,
+      "defauts": 49,
+      "faux_negatifs": 16,
+      "taux_faux_negatifs": 0.32653061224489793,
+      "taux_signalement": 0.31462925851703405
+    }
+  }
+}

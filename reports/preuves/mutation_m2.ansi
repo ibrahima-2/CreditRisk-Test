@@ -1,0 +1,13 @@
+[1;32m(.venv) CreditRisk-Test %[0m grep -n MUTATION app/preprocessing.py
+60:        taux_endettement = v["montant_credit"] / (12 * v["revenu_mensuel"])  # MUTATION
+[1;32m(.venv) CreditRisk-Test %[0m pytest -q --tb=no
+[31mFAILED[0m tests/test_donnees.py::[1mtest_reference_regenerable_a_l_identique[0m
+[31mFAILED[0m tests/test_preprocessing.py::[1mtest_taux_endettement_pour_des_durees_differentes_de_12[1200000-24-100000-0.5][0m
+[31mFAILED[0m tests/test_preprocessing.py::[1mtest_taux_endettement_pour_des_durees_differentes_de_12[300000-6-200000-0.25][0m
+[31mFAILED[0m tests/test_preprocessing.py::[1mtest_taux_endettement_pour_des_durees_differentes_de_12[90000-1-300000-0.3][0m
+[31mFAILED[0m tests/test_regression.py::[1mtest_profils_de_reference_dans_les_tolerances[0m
+[31mFAILED[0m tests/test_regression.py::[1mtest_metriques_dans_les_tolerances[0m
+[31mFAILED[0m tests/test_regression.py::[1mtest_metriques_recalculees_egales_aux_metadonnees[0m
+[31mFAILED[0m tests/test_regression.py::[1mtest_reentrainement_reproductible[0m
+[31mFAILED[0m tests/test_regression.py::[1mtest_comparaison_du_candidat_v1_1_0[0m
+[31m[31m[1m9 failed[0m, [32m324 passed[0m, [33m1 skipped[0m[31m in 3.07s[0m[0m

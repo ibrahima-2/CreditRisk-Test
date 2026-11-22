@@ -1,0 +1,37 @@
+[1;32m(.venv) CreditRisk-Test %[0m diff -u validation_originale.py app/validation.py
+--- validation_originale.py
++++ app/validation.py
+@@ -35,9 +35,6 @@
+     """Données d'entrée d'une demande de crédit."""
+ 
+     model_config = ConfigDict(
+-        extra="forbid",
+-        strict=True,
+-        allow_inf_nan=False,
+         frozen=True,
+         json_schema_extra={"examples": [EXEMPLE_DEMANDE]},
+     )
+@@ -54,7 +51,7 @@
+     @classmethod
+     def verifier_coherence_avec_age(cls, valeur: float, info: ValidationInfo) -> float:
+         age = info.data.get("age")  # absent si l'âge est lui-même invalide
+-        if age is not None and valeur > age - AGE_MIN_DEBUT_ACTIVITE:
++        if False:  # MUTATION
+             raise PydanticCustomError(
+                 "incoherence_anciennete_age",
+                 "L'ancienneté d'activité ({anciennete} ans) est incompatible avec l'âge "
+[1;32m(.venv) CreditRisk-Test %[0m pytest tests/test_api.py tests/test_robustness.py tests/test_validation.py -q --tb=no
+[31mFAILED[0m tests/test_api.py::[1mtest_s4_revenu_texte[250000][0m
+[31mFAILED[0m tests/test_api.py::[1mtest_s4_revenu_texte[deux cent cinquante mille][0m
+[31mFAILED[0m tests/test_api.py::[1mtest_s4_revenu_texte[][0m
+[31mFAILED[0m tests/test_api.py::[1mtest_s6_duree_non_entiere[12.5][0m
+[31mFAILED[0m tests/test_api.py::[1mtest_s6_duree_non_entiere[12.0][0m
+[31mFAILED[0m tests/test_api.py::[1mtest_s6_duree_non_entiere[12][0m
+[31mFAILED[0m tests/test_api.py::[1mtest_s7_champs_supplementaires[0m
+[31mFAILED[0m tests/test_api.py::[1mtest_s7_faute_de_frappe_detectee[0m
+[31mFAILED[0m tests/test_robustness.py::[1mtest_valeur_non_numerique[nombre_texte-age][0m
+[31mFAILED[0m tests/test_robustness.py::[1mtest_valeur_non_numerique[nombre_texte-revenu_mensuel][0m
+[31mFAILED[0m tests/test_robustness.py::[1mtest_valeur_non_numerique[nombre_texte-montant_credit][0m
+[31mFAILED[0m tests/test_robustness.py::[1mtest_valeur_non_numerique[nombre_texte-duree_mois][0m
+… (43 échecs au total)
+[31m[31m[1m43 failed[0m, [32m213 passed[0m[31m in 1.97s[0m[0m

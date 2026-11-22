@@ -1,0 +1,152 @@
+{
+  "date": "2026-11-22 15:25:12",
+  "configuration": {
+    "systeme": "Darwin 24.6.0 (arm64)",
+    "processeur": "Apple M4 Pro",
+    "coeurs_logiques": 12,
+    "memoire_go": 24.0,
+    "python": "3.13.5",
+    "scikit-learn": "1.9.1",
+    "numpy": "2.5.5",
+    "serveur": "uvicorn, 1 processus, boucle asyncio, endpoint synchrone (pool de threads)",
+    "client_de_charge": "httpx.AsyncClient sur la même machine",
+    "duree_palier_s": 8.0
+  },
+  "inference": [
+    {
+      "version": "1.0.0",
+      "inference_seule": {
+        "n": 5000,
+        "moyenne_ms": 0.1013107215083437,
+        "p50_ms": 0.09650000720284879,
+        "p95_ms": 0.11383719756850043,
+        "p99_ms": 0.1946013409178708,
+        "max_ms": 0.39179199666250497
+      },
+      "pipeline_validation_pretraitement_modele": {
+        "n": 5000,
+        "moyenne_ms": 0.1270299641008023,
+        "p50_ms": 0.11966649617534131,
+        "p95_ms": 0.16166600107681006,
+        "p99_ms": 0.2350597422628202,
+        "max_ms": 0.49645900435280055
+      },
+      "debit_sequentiel_inference_req_s": 9870.623613292917
+    },
+    {
+      "version": "1.1.0",
+      "inference_seule": {
+        "n": 5000,
+        "moyenne_ms": 11.135098303182167,
+        "p50_ms": 10.936042002867907,
+        "p95_ms": 13.06465349480277,
+        "p99_ms": 18.565174988470982,
+        "max_ms": 63.07470799947623
+      },
+      "pipeline_validation_pretraitement_modele": {
+        "n": 5000,
+        "moyenne_ms": 7.386217824768392,
+        "p50_ms": 5.818895995616913,
+        "p95_ms": 12.739749344473239,
+        "p99_ms": 16.440463756589462,
+        "max_ms": 34.64091700152494
+      },
+      "debit_sequentiel_inference_req_s": 89.80612229657837
+    }
+  ],
+  "api_sequentielle": {
+    "n": 2000,
+    "moyenne_ms": 1.10502267965785,
+    "p50_ms": 1.0317709966329858,
+    "p95_ms": 1.3216253035352565,
+    "p99_ms": 1.6260019136825574,
+    "max_ms": 22.03787500911858,
+    "debit_req_s": 904.9588016687871
+  },
+  "charge_progressive": [
+    {
+      "utilisateurs_simultanes": 1,
+      "n": 5883,
+      "moyenne_ms": 1.359864503123688,
+      "p50_ms": 1.2932920071762055,
+      "p95_ms": 1.6503625083714724,
+      "p99_ms": 1.977938684867695,
+      "max_ms": 29.89329099364113,
+      "debit_req_s": 735.2822740120988,
+      "erreurs": 0,
+      "taux_erreur": 0.0
+    },
+    {
+      "utilisateurs_simultanes": 2,
+      "n": 10344,
+      "moyenne_ms": 1.5467665087810403,
+      "p50_ms": 1.4844585020910017,
+      "p95_ms": 1.9223974042688496,
+      "p99_ms": 2.2717366206052234,
+      "max_ms": 7.4530839920043945,
+      "debit_req_s": 1292.799663077305,
+      "erreurs": 0,
+      "taux_erreur": 0.0
+    },
+    {
+      "utilisateurs_simultanes": 5,
+      "n": 13129,
+      "moyenne_ms": 3.0468564344675753,
+      "p50_ms": 2.9717080033151433,
+      "p95_ms": 3.684208198683336,
+      "p99_ms": 4.321394992875867,
+      "max_ms": 23.073082993505523,
+      "debit_req_s": 1640.7051931713866,
+      "erreurs": 0,
+      "taux_erreur": 0.0
+    },
+    {
+      "utilisateurs_simultanes": 10,
+      "n": 9963,
+      "moyenne_ms": 8.031183766879451,
+      "p50_ms": 6.017082996550016,
+      "p95_ms": 19.780949699634192,
+      "p99_ms": 40.10267337667733,
+      "max_ms": 124.3624170019757,
+      "debit_req_s": 1244.6816087230814,
+      "erreurs": 0,
+      "taux_erreur": 0.0
+    },
+    {
+      "utilisateurs_simultanes": 20,
+      "n": 4444,
+      "moyenne_ms": 36.03801351017104,
+      "p50_ms": 14.679812498798128,
+      "p95_ms": 166.07810188870502,
+      "p99_ms": 329.21462156024063,
+      "max_ms": 649.4280829938361,
+      "debit_req_s": 554.3404813726268,
+      "erreurs": 0,
+      "taux_erreur": 0.0
+    },
+    {
+      "utilisateurs_simultanes": 50,
+      "n": 2903,
+      "moyenne_ms": 138.294549466316,
+      "p50_ms": 63.94329199974891,
+      "p95_ms": 542.1063249887088,
+      "p99_ms": 977.3820119930315,
+      "max_ms": 2075.6050829950254,
+      "debit_req_s": 360.2399554099789,
+      "erreurs": 0,
+      "taux_erreur": 0.0
+    },
+    {
+      "utilisateurs_simultanes": 100,
+      "n": 2084,
+      "moyenne_ms": 388.539269494328,
+      "p50_ms": 168.3278540003812,
+      "p95_ms": 1646.297267010231,
+      "p99_ms": 3368.0082414660196,
+      "max_ms": 5098.2629579957575,
+      "debit_req_s": 254.62420694715775,
+      "erreurs": 0,
+      "taux_erreur": 0.0
+    }
+  ]
+}
