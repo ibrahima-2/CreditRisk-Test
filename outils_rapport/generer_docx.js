@@ -78,7 +78,7 @@ function largeursColonnes(lignes) {
   // largeur minimale : le mot le plus long de la colonne tient sur une ligne
   const minima = Array.from({ length: n }, (_, j) => {
     const mot = Math.max(...lignes.map((l) => Math.max(...nettoyer(l[j]).split(/[\s/]+/).map((m) => m.length))));
-    return Math.min(mot * 100 + 220, 3200);
+    return Math.min(Math.max(mot * 115 + 240, 800), 3200);
   });
   const total = poids.reduce((a, b) => a + b, 0);
   const brutes = poids.map((p, j) => Math.max(Math.round((p / total) * LARGEUR), minima[j]));
@@ -217,7 +217,7 @@ const garde = [
     ligneInfo("Version évaluée", "API 1.0.0, modèle credit-risk v1.0.0 (régression logistique)"),
     ligneInfo("Date", "22 novembre 2026"),
     ligneInfo("Dépôt", process.env.URL_DEPOT || "CreditRisk-Test (URL GitHub à compléter)"),
-    ligneInfo("Résultat", "334 tests : 333 réussis, 1 ignoré ; couverture 99,86 % ; 22 exigences conformes ; 9 anomalies (4 corrigées)"),
+    ligneInfo("Résultat", "334 tests : 333 réussis, 1 ignoré ; couverture 99,86 % ; 22 exigences conformes ; 10 anomalies (5 corrigées)"),
   ] }),
   new Paragraph({ spacing: { before: 480 }, children: [new TextRun({
     text: "Données synthétiques : elles servent à tester le système et ne démontrent pas la performance réelle d'un modèle de crédit.",

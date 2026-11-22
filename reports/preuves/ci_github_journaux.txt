@@ -31,3 +31,17 @@ Required test coverage of 90% reached. Total coverage: 99.86%
 FAILED tests/test_echec_volontaire.py::test_echec_volontaire - Failed: Échec volontaire : le workflow doit apparaître en rouge
 ======================== 1 failed, 333 passed in 12.68s ========================
 ##[error]Process completed with exit code 1.
+
+## Run 3 (push sur main, upload-artifact v7) - Pytest (Python 3.12)
+https://github.com/ibrahima-2/CreditRisk-Test/actions/runs/45062399743/job/137331006738
+collected 334 items
+TOTAL                    621      1     70      0    99%
+Required test coverage of 90% reached. Total coverage: 99.86%
+======================= 333 passed, 1 skipped in 12.67s ========================
+
+## Run 3 (push sur main, upload-artifact v7) - Pytest (Python 3.13)
+https://github.com/ibrahima-2/CreditRisk-Test/actions/runs/45062399743/job/137331007036
+collected 334 items
+TOTAL                    621      1     70      0    99%
+Required test coverage of 90% reached. Total coverage: 99.86%
+======================== 333 passed, 1 skipped in 7.89s ========================

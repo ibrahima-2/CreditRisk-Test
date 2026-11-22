@@ -14,7 +14,7 @@ GitHub Actions.
 | Tests exécutés | 334 (333 réussis, 1 ignoré volontairement) |
 | Couverture (lignes + branches) | 99,86 % (`app/` : 100 %) |
 | Exigences couvertes | 22 / 22 (matrice générée : `reports/preuves/tracabilite.md`) |
-| Anomalies détectées | 9 (4 corrigées, 5 ouvertes) : `reports/03_robustesse_registre_anomalies.md` |
+| Anomalies détectées | 10 (5 corrigées, 5 ouvertes) : `reports/03_robustesse_registre_anomalies.md` |
 | Inférence v1.0.0 | P95 = 0,11 ms |
 | API, 10 utilisateurs simultanés | P95 = 7 ms ; débit max ≈ 1 900 req/s (1 processus) |
 
@@ -117,6 +117,7 @@ Runs de référence (https://github.com/ibrahima-2/CreditRisk-Test/actions) :
 |---|---|---|---|---|---|
 | n° 1 | push sur `main` | réussi | réussi | réussi | 333 réussis, 1 ignoré, couverture 99,86 % |
 | n° 2 | manuel, `forcer_echec` coché | réussi | échec | échec | `test_echec_volontaire` en échec, code de sortie 1 |
+| n° 3 | push sur `main` (upload-artifact v7) | réussi | réussi | réussi | 333 réussis, 1 ignoré, aucun avertissement |
 
 Extraits des journaux : `reports/preuves/ci_github_journaux.txt`.
 
