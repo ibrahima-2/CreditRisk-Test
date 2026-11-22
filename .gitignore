@@ -14,7 +14,7 @@ __pycache__/
 /coverage.xml
 /htmlcov/
 reports/ci/
-outils_rapport/node_modules/
+outils_rapport/
 
 # Système / éditeurs
 .DS_Store

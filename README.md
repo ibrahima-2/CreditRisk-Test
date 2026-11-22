@@ -133,7 +133,6 @@ tests/               test_validation, test_preprocessing, test_api, test_integra
                      test_tracabilite, test_echec_volontaire, exigences.py (catalogue)
 scripts/             banc de performance, locustfile, figures
 reports/             plan de test, rapports, preuves, captures, figures
-outils_rapport/      génération des captures (Playwright) et du rapport Word (docx, non versionné)
 .github/workflows/   tests.yml
 ```
 

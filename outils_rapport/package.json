@@ -1,8 +1,0 @@
-{
-  "name": "outils-rapport",
-  "private": true,
-  "description": "Génération du rapport Word à partir du Markdown",
-  "dependencies": {
-    "docx": "^9.16.0"
-  }
-}
